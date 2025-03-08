@@ -1,0 +1,172 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content {
+        margin: 2em 5px;
+    }
+
+    .nuestroCamino {
+        flex-direction: column;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .header video {
+        height: auto;
+    }
+
+    .videoNuestroCamino video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .filosofia-textos {
+        width: auto;
+    }
+
+    .mensajes-filosofias {
+        gap: 1em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+        margin: 2em 5px;
+    }
+
+    .nuestroCamino {
+        flex-direction: column;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .header video {
+        height: auto;
+    }
+
+    .videoNuestroCamino video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .filosofia-textos {
+        width: auto;
+    }
+
+    .mensajes-filosofias {
+        gap: 1em;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .content {
+        margin: 2em 15px;
+    }
+
+    .nuestroCamino {
+        flex-direction: row;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .header video {
+        height: auto;
+    }
+
+    .videoNuestroCamino video {
+        max-width: 400px;
+        height: 100%;
+    }
+
+    .filosofia-textos {
+        width: auto;
+    }
+
+    .mensajes-filosofias {
+        gap: 1em;
+    }
+
+    .empleado .nombre-rol {
+        font-size: 1.5em;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content {
+        margin: 2em 50px;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .header video {
+        height: 60vh;
+    }
+
+    .videoNuestroCamino video {
+        max-width: 900px;
+        height: 100%;
+    }
+
+    .columna-izquierda,
+    .columna-derecha {
+        flex: 1;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content {
+        margin: 2em 10em;
+    }
+
+    .header {
+        height: 90vh;
+    }
+
+    .header video {
+        height: 90vh;
+    }
+
+    .videoNuestroCamino video {
+        max-width: 900px;
+        height: 100%;
+    }
+
+    .columna-izquierda,
+    .columna-derecha {
+        flex: 1;
+    }
+
+    .filosofia-textos {
+        width: 400px;
+        text-align: center;
+    }
+
+    .mensajes-filosofias {
+        justify-content: center;
+        gap: 7em;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1600px) {
+    .redes-sociales {
+        gap: 0;
+    }
+
+    .img-iconos {
+        width: auto;
+        flex: 1;
+    }
+}
