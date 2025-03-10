@@ -271,7 +271,6 @@ p {
 /*carrucel*/
 .container {
     width: 80vw;
-    background-color: ;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
@@ -279,10 +278,6 @@ p {
 
 section {
     max-height: 20vw;
-}
-
-img {
-    background: ;
 }
 
 .swiper-container {

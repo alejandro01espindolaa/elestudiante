@@ -1,7 +1,7 @@
 /*fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Lobster, Titulos*/
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); /*Merriweather, Contenido*/
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand* Ofertas*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap'); /*Noto Sans, Contenido*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand, Ofertas*/
 /*fonts*/
 
 /*cuerpo*/
@@ -23,7 +23,7 @@
 
 header {
     font-size: 1.5rem;
-    font-family: 'Merriweather';
+    font-family: 'Noto Sans';
     color: #040404;
     background: #ede0dd;
 }
@@ -35,17 +35,38 @@ header {
     .text-2xl {
         font-size: 1.5rem;
     }
+    .logo-sin-fondo {
+        height: 80px; 
+    }
+}
+
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
 }
 
 nav a:hover {
-    background: linear-gradient(to right, #7c7c84, #ede0dd)
+    transform: scale(1.1);
+    background: linear-gradient(to right, #7c7c84, #ede0dd); 
 }
+
+nav a:hover {
+    background: none !important; 
+    box-shadow: none !important; 
+}
+
 /*cuerpo*/
 
 /*Carrucel*/
 .swiper-button-prev, .swiper-button-next {
     color: white !important;
-    background: #7c7c84;
+    background: #7c8384;
     padding: 20px;
     border-radius: 50%;
 }
@@ -63,7 +84,7 @@ nav a:hover {
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     opacity: 0;

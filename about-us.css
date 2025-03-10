@@ -13,29 +13,6 @@ body {
     box-sizing: border-box;
 }  
 
-
-.titulos {
-    width: 100%;
-    color: #b22227;
-    font-family: Lobster;
-    font-size: 3em;
-    margin-bottom: .5em;
-}
-
-.subtitulos {
-    color: #ede0dd;
-    font-family: noto sans;
-    font-size: 1.2em;
-}
-
-.contenido {
-    font-family: noto sans;
-    color: #ede0dd;
-    font-size: 1.5em;
-    margin-bottom: 2em;
-}
-
-
 /*cuerpo*/
 .text-2xl {
     font-size: 3.5rem;
@@ -45,7 +22,7 @@ body {
 
 .fixed-header {
     font-size: 1.5rem;
-    font-family: 'Noto Sans';
+    font-family: 'Merriweather';
     color: #040404;
     background: #ede0dd;
 }
@@ -57,36 +34,17 @@ body {
     .text-2xl {
         font-size: 1.5rem;
     }
-    .logo-sin-fondo {
-        height: 80px; 
-    }
-}
-
-nav a {
-    transition: transform 0.2s ease-in-out; 
-    padding: 2px 12px; 
-    display: inline-block;
-    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
-}
-
-nav a:last-child {
-    border-right: none; /* Evita la línea en el último enlace */
 }
 
 nav a:hover {
-    transform: scale(1.1);
-    background: linear-gradient(to right, #7c7c84, #ede0dd); 
-}
-
-nav a:hover {
-    background: none !important; 
-    box-shadow: none !important; 
+    background: linear-gradient(to right, #7c7c84, #ede0dd)
 }
 
 .header {
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-top: 63px;
 }
 
 .header video {
@@ -109,7 +67,7 @@ nav a:hover {
 }
 
 
-/* Nuestro Camino */
+
 .videoNuestroCamino video {
     width: 200px;
     height: 100px;
@@ -175,8 +133,46 @@ nav a:hover {
     object-fit: cover;
 }
 
+.nombre-empleados {
+    color: #b22227;
+    font-family: Lobster;
+    font-size: 2.2em;
+    margin-bottom: .5em;
+}
+
 .quienes-somos-camino {
     text-align: left;
+}
+
+.descripcion {
+    text-align: justify;
+}
+
+.titulos {
+    width: 100%;
+    color: #b22227;
+    font-family: Lobster;
+    font-size: 3em;
+    margin-bottom: .5em;
+}
+
+.subtitulos {
+    color: #ede0dd;
+    font-family: lobster;
+    font-size: 1.2em;
+}
+
+.contenido {
+    font-family: noto sans;
+    color: #ede0dd;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+.texto-centrado {
+    place-self: center;
+    position: relative;
+    max-width: 80%;
 }
 
 .imagen-mesas {
@@ -191,34 +187,7 @@ nav a:hover {
 
 }
 
-/* Empleados */
-.nombre-empleados {
-    color: #b22227;
-    font-family: Lobster;
-    font-size: 2.2em;
-    margin-bottom: .5em;
-}
 
-.descripcion {
-    text-align: justify;
-}
-
-/* Filosofia */
-.filosofia-textos {
-    width: 200px;
-    text-align: center;
-}
-
-.mensajes-filosofias {
-    justify-content: center;
-    gap: 7em;
-}
-
-.texto-centrado {
-    place-self: center;
-    position: relative;
-    max-width: 80%;
-}
 
 .origenes {
     flex: 1;
@@ -267,6 +236,16 @@ nav a:hover {
     font-style: italic;
     font-size: .8em;
     margin-top: .4em;
+}
+
+.filosofia-textos {
+    width: 200px;
+    text-align: center;
+}
+
+.mensajes-filosofias {
+    justify-content: center;
+    gap: 7em;
 }
 
 /* Footer */
