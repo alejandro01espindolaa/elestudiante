@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El estudiante - Historia</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./vision.css">
 </head>    
     <body>
-    <header>
-    <div class="header">
-        <nav>
-            <ul class="col">
-                <li><a class="barra" href="index.html">Inicio</a></li>
-                <li><a class="barra" href="./nuestraHistoria.html">Nuestra Historia</a></li>
-                <li><a class="barra" href="#">Menú</a></li>
-                <li><a class="barra" href="#">Reservas</a></li>
-                <li><a class="barra" href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        <h1>El Estudiante.</h1>
-        <h2>Nuestra Historia</h2>
-    </div>
-    </header>
+        <header class="fixed top-0 left-0 w-full z-50">
+            <nav class="shadow-md p-0.5">
+                <div class="container mx-auto flex justify-between items-center">
+                    <div> <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
+                    <div class="space-x-4">
+                        <a href="#">Inicio</a>
+                        <a href="./productos.html">Menu</a>
+                        <a href="#">Servicios</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
     <main class="container mx-auto pt-24 px-4">
+        <h1>Nuestra Historia.</h1>
     <div class="container">
         <div class="section filosofia">
             <section class="mb-16">
                 <div class="swiper-container" id="comidas-carousel">
                     <div class="swiper-wrapper">
-                        <div>
+                        <div class="swiper-slide flex flex-col items-center  shadow-md p-4 rounded-md">    
                             <img src="./historia1.jpg" alt="Pozole" class="rounded-md mb-2"/>
                         </div>
                         <div class="swiper-slide flex flex-col items-center  shadow-md p-4 rounded-md">
@@ -43,26 +43,26 @@
                 </div>
             </section>
             <div class="text">
-                <p class="title">Nuestra Filosofía</p>
-                <p class="resumen">Creemos firmemente que la excelencia gastronómica nace del respeto por los ingredientes. Trabajamos directamente con productores locales seleccionados cuidadosamente, garantizando la frescura y calidad en cada plato. Nuestra carta, que cambia con las estaciones, es un homenaje a la tradición culinaria francesa reinterpretada con técnicas modernas y toques de autor que sorprenden y deleitan a nuestros comensales.</p>
+                <p class="title">Visión.</p>
+                <p class="resumen">Lograr el mejor servicio de Restaurante-Bar, destacándonos por ofrecer una experiencia única e inolvidable para nuestros clientes. Con un equipo de trabajo apasionado, comprometido y altamente capacitado, buscamos superar las expectativas en cada visita, creando un ambiente acogedor, innovador y lleno de calidad que invita a regresar una y otra vez.</p>
             </div>
         </div>
         
         <div class="section filosofia">
             <div class="text">
-                <p class="title">Nuestra Filosofía</p>
-                <p class="resumen">Creemos firmemente que la excelencia gastronómica nace del respeto por los ingredientes. Trabajamos directamente con productores locales seleccionados cuidadosamente, garantizando la frescura y calidad en cada plato. Nuestra carta, que cambia con las estaciones, es un homenaje a la tradición culinaria francesa reinterpretada con técnicas modernas y toques de autor que sorprenden y deleitan a nuestros comensales.</p>
+                <p class="title">Misión.</p>
+                <p class="resumen">Nuestra misión es ofrecer un servicio de calidad excepcional que supere las expectativas de nuestros clientes. Nos comprometemos a brindar un ambiente acogedor, lleno de respeto, atención personalizada y comodidad, para que cada visitante se sienta valorado y satisfecho. A través de la confianza en la excelencia de nuestros productos y la dedicación de nuestros colaboradores, buscamos no solo satisfacer necesidades, sino también crear momentos memorables e inigualables que inspiren a nuestros clientes a regresar y a recomendarnos con entusiasmo.</p>
             </div>
             <section class="mb-16">
                 <div class="swiper-container" id="bebidas-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia1.jpg" alt="mision1" class="rounded-md mb-2"/>
                         </div>
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia2.jpg" alt="mision2" class="rounded-md mb-2"/>
                         </div>
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia3.jpeg" alt="mision3" class="rounded-md mb-2"/>
                         </div>
                     </div>
@@ -74,44 +74,63 @@
             <section class="mb-16">
                 <div class="swiper-container" id="postres-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia1.jpg" alt="Pozole" class="rounded-md mb-2"/>
                         </div>
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia2.jpg" alt="Tacos" class="rounded-md mb-2"/>
                         </div>
-                        <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                        <div class="swiper-slide flex flex-col items-center shadow-md p-4 rounded-md">
                             <img src="./historia3.jpeg" alt="Enchiladas" class="rounded-md mb-2"/>
                         </div>
                     </div>
                 </div>
             </section>
             <div class="text">
-                <p class="title">Nuestra Filosofía</p>
-                <p class="resumen">Creemos firmemente que la excelencia gastronómica nace del respeto por los ingredientes. Trabajamos directamente con productores locales seleccionados cuidadosamente, garantizando la frescura y calidad en cada plato. Nuestra carta, que cambia con las estaciones, es un homenaje a la tradición culinaria francesa reinterpretada con técnicas modernas y toques de autor que sorprenden y deleitan a nuestros comensales.</p>
+                <p class="title">Valores.</p>
+                <p class="resumen"><strong>Compromiso con la calidad:</strong> Garantizar excelencia en los productos y servicios ofrecidos.
+
+                <br><strong>Orientación al cliente:</strong> Priorizar la satisfacción y felicidad de tus clientes en cada experiencia.
+                    
+                <br>Trabajo en equipo:</strong> Fomentar la colaboración, el respeto y la unión entre los miembros del equipo.
+                    
+                <br><strong>Innovación:</strong> Buscar maneras creativas e innovadoras para mejorar continuamente.
+                    
+                <br><strong>Hospitalidad:</strong> Crear un ambiente cálido y acogedor que haga sentir a los clientes como en casa.
+                    
+                <br><strong>Responsabilidad:</strong> Compromiso con prácticas éticas, desde la sostenibilidad hasta el trato justo con clientes y empleados.
+                    
+                <br><strong>Pasión:</strong> Mostrar entusiasmo y dedicación en cada detalle del negocio.</p>
             </div>
         </div>
     </div>
     <div>
    </div>
    </main>
-    <footer id="hidden-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <a class="link" href="https://facebook.com" target="_blank">Facebook</a>
-                <a class="link" href="https://instagram.com" target="_blank">Instagram</a>
-                <a class="link" href="https://twitter.com" target="_blank">Twitter</a>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces útiles</h3>
-                <a class="link" href="#">Términos y condiciones</a>
-                <a class="link" href="#">Política de privacidad</a>
-                <a class="link" href="#">Soporte</a>
-            </div>
+   <footer id="hidden-footer">
+    <div class="footer-content">
+        <div class="footer-section">         
+            <a class="link" href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook" style="width: 40px"></a>                
+            <a class="link" href="https://instagram.com" target="_blank"><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"></a>
+            <a class="link" href="https://twitter.com" target="_blank"><img src="./instagram.png" alt="Instagram" style="width: 40px"></a>
+            <a class="link" href="https://tiktok.com" target="_blank"><img src="./tiktok.png" alt="Tiktok" style="width: 40px"></a>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <div class="footer-section">
+            <h3>Enlaces útiles</h3>
+            <a id="link" class="link" href="#">Términos y Condiciones</a>
+            <a id="link" class="link" href="#">Política de Privacidad</a>
+            <a id="link" class="link" href="#">Soporte</a>
+            <a id="link" class="link" href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+            <h3>Sitios de interes</h3>
+            <a id="link" class="link" href="#">Comida tipica de México</a>
+            <a id="link" class="link" href="#">Gastronomia</a>
+            <a id="link" class="link" href="#">Contactanos</a>
+            <a id="link" class="link" href="#">Vision y Mision</a>
+        </div>
+    </div>
+    </footer>
     <script type="module" src="./vision.js"></script>
 </body>
 </html>
