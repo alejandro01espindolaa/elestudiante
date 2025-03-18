@@ -340,41 +340,15 @@ nav a:hover {
     background: linear-gradient(to right, #7c7c84, #ede0dd)
 }
 
-/* Footer desplegable */
-#footer-tab {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(4, 4, 4, 0.6);
-    color: #ede0dd;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px 10px 0 0;
-    z-index: 1000;
-    font-family: 'Quicksand';
-    text-align: center;
-}
-
-#footer-tab:hover {
-    background-color: #3c3a3c;
-}
-
-#footer-hint {
-    display: inline-block;
-    font-size: 1rem;
-    font-family: 'Quicksand';
-}
-
+/* Footer */
 #hidden-footer {
-    position: fixed;
-    bottom: -100%;
+    position: relative; /* Cambiado de fixed a relative */
+    bottom: 0; /* No es necesario con relative, pero no afecta */
     left: 0;
     width: 100%;
     background-color: #040404;
     padding: 20px;
     box-shadow: 0 -5px 10px #ede0dd;
-    transition: bottom 0.3s ease-in-out;
     z-index: 999;
 }
 
@@ -400,10 +374,4 @@ nav a:hover {
 #hidden-footer .footer-section a:hover {
     text-decoration: underline;
 }
-
-/* Mostrar el footer al pasar el mouse */
-#footer-tab:hover + #hidden-footer,
-#hidden-footer:hover {
-    bottom: 0;
-}
-/* Footer desplegable */
+/* Footer */
