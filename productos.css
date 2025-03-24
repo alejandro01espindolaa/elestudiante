@@ -6,7 +6,6 @@
 
 body {
     background: linear-gradient(to right, #040404, #7c7c84);
-    padding: 10px;
 }
 /* Ocultar la barra de scroll pero permitir el desplazamiento */
 html, body {
