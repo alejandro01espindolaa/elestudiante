@@ -109,7 +109,7 @@ h3 {
 /* Efecto al pasar el cursor */
 .link:hover {
   transform: scale(1.2); /* Hace que el texto crezca un 20% */
-  color: #007bff; /* Cambia el color si lo deseas */
+  color: #007bff;
 }
 
 @media (max-width: 720px) {
@@ -124,7 +124,7 @@ h3 {
   max-width: 90%; /* Para evitar que las alertas sean demasiado anchas */
   margin-left: auto; /* Centra el contenedor de alertas horizontalmente */
   margin-right: auto; /* Centra el contenedor de alertas horizontalmente */
-  z-index: 1050; /* Para asegurarte de que se muestre por encima de otros elementos */
+  z-index: 1050;
 }
 
 .alert {
@@ -182,7 +182,7 @@ h3 {
 }
 
 .card {
-  border: none; /* Elimina los bordes de la tarjeta si es necesario */
+  border: none;
   margin-bottom: 100px;
 }
 body {
@@ -197,7 +197,7 @@ body {
 .col-10,
 .col-sm-8,
 .col-md-6 {
-  max-width: 600px; /* Ajusta este valor según lo que prefieras */
+  max-width: 600px;
   width: 100%;
 }
 .btn {
