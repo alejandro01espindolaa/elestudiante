@@ -6,6 +6,21 @@
 
 body {
     background: linear-gradient(to right, #040404, #7c7c84);
+    font-size: 18px;
+}
+
+/* Para tablets y pantallas medianas */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Para celulares y pantallas pequeñas */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
 }
 /* Ocultar la barra de scroll pero permitir el desplazamiento */
 html, body {
