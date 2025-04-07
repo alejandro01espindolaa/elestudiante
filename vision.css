@@ -4,9 +4,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand, Ofertas*/
 /*fonts*/
 
+/*cuerpo*/
 body {
     background-color: #040404;
     color: #ede0dd;
+}
+/* Ocultar la barra de scroll pero permitir el desplazamiento */
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
 }
 
 header {
@@ -70,6 +81,7 @@ p {
     color: #b22227;
     margin-bottom: 15px;
 }
+/*cuerpo*/
 
 /*carrucel*/
 section {
@@ -125,7 +137,7 @@ nav a:last-child {
 }
 
 nav a:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     background: linear-gradient(to right, #7c7c84, #ede0dd); 
 }
 
@@ -148,7 +160,7 @@ nav a:hover {
 
 h3 {
     font-family: "Lobster";
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: #b22227;
 }
 
@@ -171,18 +183,15 @@ h3 {
     text-decoration: none;
 }
 
-/* Estilo base para los enlaces */
 .link {
     font-size: 16px;
     text-decoration: none;
-    color: #000;
-    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación */
+    color: #040404;
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-/* Efecto al pasar el cursor */
 .link:hover {
-    transform: scale(1.2); /* Hace que el texto crezca un 20% */
-    color: #007BFF; /* Cambia el color si lo deseas */
+    transform: scale(1.5); 
 }
 
 @media (max-width: 720px) {
