@@ -369,10 +369,18 @@ h3 {
 }
 
 /* Móviles */
-@media (max-width: 576px) {
+@media (max-width: 590px) {
 
     .navbar{
         height: 7.5rem;
+    }
+
+    #window{
+        font-size: 1rem;
+    }
+
+    #lastChild{
+        font-size: 1rem;
     }
 
     .container {
@@ -425,7 +433,20 @@ h3 {
 }
 
 /* Móviles pequeños */
-@media (max-width: 375px) {
+@media (max-width: 475px) {
+
+    .navbar{
+        height: 10rem;
+    }
+
+    #window{
+        font-size: 1rem;
+    }
+
+    #lastChild{
+        font-size: 1rem;
+    }
+
     .hero h1 {
         font-size: 1.6rem;
     }
