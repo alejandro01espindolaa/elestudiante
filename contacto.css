@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Lobster, Titulos*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 :root {
     --negro: #040404;
     --gris-oscuro: #3c3a3c;
@@ -13,6 +16,11 @@
     box-sizing: border-box;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
+
 body {
     font-family: 'Merriweather', serif;
     background-color: var(--crema);
@@ -21,21 +29,23 @@ body {
 }
 
 .navbar {
+    height: 5.2rem;
     background-color: var(--negro);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding-left: 2.7rem;
 }
 
 .logoImg {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    width: 6.6%;
-    margin-left: 6.3%;
+   
+    height: 5rem;
+    margin-left: 1.25rem;
 }
 
 .nav-links {
-    font-family: 'Noto Sans';
+    font-family: 'Merriweather';
     display: flex;
     list-style: none;
     margin-right: 4%;
@@ -48,13 +58,13 @@ body {
 .nav-links a {
     transition: transform 0.2s ease-in-out; 
     border-right: 1px solid #7c7c84;
-    padding: 1px 11px;
+    padding: 2px 12px;
     display: inline-block;
 
     color: var(--crema);
     text-decoration: none;
     transition: color 0.3s;
-    font-size: 150%;
+    font-size: 1.5rem;
 }
 
 
@@ -67,33 +77,18 @@ body {
 
 #lastChild {
     border-right: none;
+    padding-right: 0%;
+    padding-left: 12px;
 }
 
 .video-fondo {
     position: absolute;
-    top: 0;
+    top: 5.2rem;
     left: 0;
     width: 100%;
     height: 80%;
     object-fit: cover; /* Ajusta el video para cubrir todo el div */
     z-index: -1; /* Coloca el video detrás del contenido */
-}
-
-/* menu para móvil */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    height: 3px;
-    width: 100%;
-    background-color: var(--crema);
-    border-radius: 3px;
 }
 
 .hero {
@@ -263,7 +258,6 @@ button:hover {
     background-color: #040404;
     padding: 20px;
     box-shadow: 0 -5px 10px #ede0dd;
-    z-index: 999;
 }
 
 h3 {
@@ -272,14 +266,7 @@ h3 {
     color: #b22227;
 }
 
-@media (max-width: 720px) {
-    h3 {
-        font-size: .8rem;
-    }
-    #link {
-        font-size: .7rem;
-    }
-}
+
 
 #hidden-footer .footer-content {
     display: flex;
@@ -288,14 +275,12 @@ h3 {
 }
 
 #hidden-footer .footer-section {
-    margin-bottom: 10px;
     font-family: 'Noto Sans';
     color: #ede0dd;
 }
 
 #hidden-footer .footer-section a {
     display: block;
-    margin-bottom: 5px;
     color: #ede0dd;
     text-decoration: none;
 }
@@ -314,12 +299,7 @@ h3 {
     color: #007BFF; /* Cambia el color si lo deseas */
 }
 
-@media (max-width: 720px) {
-    h3 {
-        font-size: 1rem;
-    }
-}
-/* Footer */
+
 
 /* Pantallas grandes */
 @media (max-width: 1200px) {
@@ -330,6 +310,14 @@ h3 {
 
 /* Pantallas medianas */
 @media (max-width: 992px) {
+
+
+
+    .nav-links{
+        align-items: center;
+        display:ruby;
+    }
+
     .container {
         max-width: 720px;
         gap: 2rem;
@@ -346,9 +334,6 @@ h3 {
 
 /* Tablets y móviles grandes */
 @media (max-width: 768px) {
-    .logoImg {
-        width: 50px;
-    }
 
     .container {
         grid-template-columns: 1fr;
@@ -371,33 +356,8 @@ h3 {
     .hero p {
         font-size: 1.1rem;
     }
-    
-    .menu-toggle {
-        display: flex;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 0px;
-        left: 20%;
-        width: 60%;
-        flex-direction: column;
-        background-color: var(--negro);
-        align-items: center;
-        padding: 1rem 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-        z-index: 100;
-    }
-    
-    .nav-links.active {
-        max-height: 300px;
-    }
-    
-    .nav-links li {
-        margin: 1rem 0;
-    }
+
+
     
     .contact-item {
         flex-wrap: wrap;
@@ -410,6 +370,11 @@ h3 {
 
 /* Móviles */
 @media (max-width: 576px) {
+
+    .navbar{
+        height: 7.5rem;
+    }
+
     .container {
         margin: 2rem auto;
         padding: 0 1rem;
