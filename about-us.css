@@ -12,8 +12,15 @@ body {
     padding: 0;
     box-sizing: border-box;
 }  
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
 
-
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
 .titulos {
     width: 100%;
     color: #b22227;
