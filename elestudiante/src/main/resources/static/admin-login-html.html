@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Restaurante el Estudiante</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin-login-style.css">
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="shadow-md p-0.5">
+            <div class="container mx-auto flex justify-between items-center">
+                <div> <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
+                <div class="space-x-4">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./productos.html">Menu</a>
+                    <a href="./about-us.html">Nosotros</a>
+                    <a href="./contacto.html">Contacto</a>
+                    <a href="./vision.html">Reseñas</a>
+                    <a href="./admin-login-html.html">Administrador</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-16 px-4">
+        <div class="relative min-h-screen flex items-center justify-center">
+            <video autoplay muted loop id="background-video" class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="adminVid1.mp4" type="video/mp4">
+            </video>            
+            <div class="login-container z-20 relative">
+                <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Acceso Administrativo</h1>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                    
+                    <div class="relative">
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
+                        <div class="flex items-center relative">
+                            <input type="password" id="password" name="password" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <button type="button" id="toggle-password" class="absolute right-3 text-gray-500 hover:text-gray-700 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="eye-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="eye-closed" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="error-message" class="text-red-500 text-sm hidden h-5">
+                        Correo electrónico o contraseña incorrectos. Por favor, inténtalo de nuevo.
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="w-full btn-primary font-bold py-2 px-4 rounded-md">
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="hidden-footer">
+        <div class="footer-content">
+            <div class="footer-section">         
+                <a class="link" href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook" style="width: 40px"></a>                
+                <a class="link" href="https://instagram.com" target="_blank"><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"></a>
+                <a class="link" href="https://twitter.com" target="_blank"><img src="./instagram.png" alt="Instagram" style="width: 40px"></a>
+                <a class="link" href="https://tiktok.com" target="_blank"><img src="./tiktok.png" alt="Tiktok" style="width: 40px"></a>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces útiles</h3>
+                <a id="link" class="link" href="#">Términos y Condiciones</a>
+                <a id="link" class="link" href="#">Política de Privacidad</a>
+                <a id="link" class="link" href="#">Soporte</a>
+                <a id="link" class="link" href="#">Blog</a>
+            </div>
+            <div class="footer-section">
+                <h3>Sitios de interes</h3>
+                <a id="link" class="link" href="#">Comida tipica de México</a>
+                <a id="link" class="link" href="#">Gastronomia</a>
+                <a id="link" class="link" href="#">Contactanos</a>
+                <a id="link" class="link" href="#">Vision y Mision</a>
+            </div>
+        </div>
+        </footer>
+
+    <script src="admin-login-js.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Lobster, Titulos*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap'); /*Noto Sans, Contenido*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand, Ofertas*/
+/*fonts*/
+
+/*cuerpo*/
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
+
+.text-2xl {
+    font-size: 3.5rem;
+    font-family: 'Lobster';
+    color: #040404;
+}
+
+.text-4xl {
+    color: #ede0dd;
+    font-family: 'Quicksand';
+}
+
+.text-xl {
+    color: #ede0dd;
+    font-family: 'Quicksand';
+}
+
+header {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans';
+    color: #040404;
+    background: #ede0dd;
+}
+
+@media (max-width: 720px) {
+    header {
+        font-size: 1rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    .logo-sin-fondo {
+        height: 80px; 
+    }
+}
+
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #7c7c84, #ede0dd); 
+}
+
+nav a:hover {
+    background: none !important; 
+    box-shadow: none !important; 
+}
+
+/*cuerpo*/
+
+/*Carrucel*/
+.swiper-button-prev, .swiper-button-next {
+    color: white !important;
+    background: #7c8384;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+}
+
+#swiper-message {
+    position: fixed;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#swiper-message.visible {
+    opacity: 1;
+}
+/*Botones carrucel*/
+.bg-blue-600 {
+    background-color: rgba(4, 4, 4, 0.6);
+    font-family: 'Quicksand';
+}
+
+.bg-green-600 {
+    background-color: rgba(4, 4, 4, 0.6);
+    font-family: 'Quicksand';
+}
+
+.bg {
+    background-color: rgba(4, 4, 4, 0.6);
+    font-family: 'Quicksand';
+    color:#ede0dd;
+}
+
+.bg:hover {
+    background-color: #3c3a3c;
+}
+/*Carrucel*/
+
+/*Carrito*/
+#carrito-lateral {
+    position: fixed;
+    left: 5px;
+    top: 8%;
+    width: 55px;
+    height: 55px;
+    background-color: rgb(4, 4, 4, 0.5);
+    border: 2px solid #7c7c84;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(4, 4, 4, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    overflow: hidden;
+    color: #ede0dd;
+}
+
+/* Estilos cuando se expande */
+#carrito-lateral.expanded {
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    cursor: grab;
+    padding: 10px;
+    background-image: url("./images/images.jpg");
+    overflow-y: auto;
+}
+
+/* Ícono del carrito */
+#icono-carrito {
+    font-size: 35px;
+    display: block;
+}
+
+/* Contenido oculto por defecto */
+#carrito-contenido {
+    display: none;
+}
+
+/* Muestra el contenido cuando está expandido */
+#carrito-lateral.expanded #carrito-contenido {
+    display: block;
+}
+
+/* Botón finalizar compra */
+#finalizar-compra {
+    display: none;
+}
+
+#carrito-lateral.expanded #finalizar-compra {
+    display: block;
+}
+
+/*Carrito*/
+
+/* Ofertas */
+/* Botón flotante */
+#ofertas-btn {
+    position: fixed;
+    left: 10px;
+    top: 20%;
+    transform: translateY(-50%);
+    background-color: rgba(4, 4, 4, 0.6);
+    color: #ede0dd;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 9999;
+    transition: background 0.3s;
+    font-family: 'Quicksand';
+}
+
+#ofertas-btn:hover {
+    background-color: #3c3a3c;
+}
+
+/* Panel de ofertas sin marco ni fondo */
+.ofertas-container {
+    position: fixed;
+    left: -110%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110%;
+    max-width: 550px;
+    padding: 10px;
+    text-align: center;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 9998;
+    background-color: rgba(04, 04, 04, 0.5); /* Fondo rojo con 50% de opacidad */
+    border-radius: 15px; /* Bordes redondeados opcionales */
+    box-shadow: none; /* Sin sombra */
+}
+/* Cuando el panel está abierto */
+.ofertas-container.activo {
+    left: 0;
+}
+
+/* Mantiene el diseño original de las ofertas */
+.ofertas-titulo {
+    all: unset;
+    font-family: 'Quicksand';
+    font-size: 2rem;
+    color: #ede0dd;
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, .5rem));
+    gap: 20px;
+}
+
+.oferta-card {
+    background-color: rgba(54, 50, 50, 0.3);
+    border-radius: 0;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    position: relative;
+}
+
+.oferta-card:hover {
+    transform: scale(1.05);
+    background-color: #040404;
+}
+
+.oferta-titulo {
+    font-family: 'Quicksand';
+    color: #ede0dd;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.oferta-descripcion {
+    color: #ede0dd;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.oferta-precio {
+    font-family: 'Quicksand';
+    color: #ede0dd;
+    font-size: 2rem;
+    display: block;
+}
+
+.oferta-original {
+    text-decoration: line-through;
+    color: #ede0dd;
+    font-size: 1rem;
+}
+
+.badge-oferta {
+    background-color: #b22227;
+    color: #ede0dd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-family: 'Quicksand';
+}
+
+/* Imagen dentro de la oferta*/
+.oferta-imagen {
+    width: 100px;  /* Ajusta el tamaño según lo necesites */
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Espacio entre la imagen y el contenido de la tarjeta */
+    border-radius: 8px;  /* Si deseas bordes redondeados */
+    opacity: 0.8;  /* Un poco de transparencia */
+    transition: opacity 0.3s ease;
+}
+
+.oferta-imagen:hover {
+    opacity: 1;  /* Aumenta la opacidad al pasar el ratón */
+}
+/* Ofertas */
+
+/*Botones carrucel*/
+.bg-blue-600 {
+    background-color: #b22227;
+}
+
+.bg-green-600 {
+    background-color: #b22227;
+}
+
+.bg-red-600 {
+    background-color: #b22227;
+}
+/*Botones carrucel*/
+
+nav a:hover {
+    background: linear-gradient(to right, #7c7c84, #ede0dd)
+}
+
+/* Footer */
+#hidden-footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #040404;
+    padding: 20px;
+    box-shadow: 0 -5px 10px #ede0dd;
+    z-index: 999;
+}
+
+h3 {
+    font-family: "Lobster";
+    font-size: 1.5rem;
+    color: #b22227;
+}
+
+@media (max-width: 720px) {
+    h3 {
+        font-size: 1rem;
+    }
+    #link {
+        font-size: .7rem;
+    }
+}
+
+#hidden-footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+#hidden-footer .footer-section {
+    margin-bottom: 10px;
+    font-family: 'Noto Sans';
+    color: #ede0dd;
+}
+
+#hidden-footer .footer-section a {
+    display: block;
+    margin-bottom: 5px;
+    color: #ede0dd;
+    text-decoration: none;
+}
+
+/* Estilo base para los enlaces */
+.link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto al pasar el cursor */
+.link:hover {
+    transform: scale(1.2); /* Hace que el texto crezca un 20% */
+    color: #007BFF; /* Cambia el color si lo deseas */
+}
+/* Footer */

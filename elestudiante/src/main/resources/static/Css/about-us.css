@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"); 
+
+body {
+    color: white;
+    background-color: black;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
+.titulos {
+    width: 100%;
+    color: #b22227;
+    font-family: Lobster;
+    font-size: 3em;
+    margin-bottom: .5em;
+}
+
+.subtitulos {
+    color: #ede0dd;
+    font-family: noto sans;
+    font-size: 1.2em;
+}
+
+.contenido {
+    font-family: noto sans;
+    color: #ede0dd;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+
+/*cuerpo*/
+.text-2xl {
+    font-size: 3.5rem;
+    font-family: 'Lobster';
+    color: #040404;
+}
+
+.fixed-header {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans';
+    color: #040404;
+    background: #ede0dd;
+}
+
+@media (max-width: 720px) {
+    header {
+        font-size: 1rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    .logo-sin-fondo {
+        height: 80px; 
+    }
+}
+
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #7c7c84, #ede0dd); 
+}
+
+nav a:hover {
+    background: none !important; 
+    box-shadow: none !important; 
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header video {
+    width: 100%;
+    object-fit: cover;
+}
+
+.content {
+    margin: 2em 10em;
+}
+
+.company-name {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+
+/* Nuestro Camino */
+.videoNuestroCamino video {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.columnas {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.columna-derecha {
+    display: flex;
+    flex: 3;
+    padding: 1em;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.columna-izquierda {
+    display: flex;
+    flex: 2;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-sociales {
+    width: 100%;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.redes {
+    text-align: center;
+}
+
+.img-iconos {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    width: calc(50% - 1em);
+}
+
+.img-iconos svg {
+    color: #ede0dd;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.iconos {
+    margin-top: 30px;
+    display: flex;
+    position: relative;
+    gap: 1em;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.quienes-somos-camino {
+    text-align: left;
+}
+
+.imagen-mesas {
+    width: 100%;
+    /* Ancho fijo */
+    height: 500px;
+    /* Altura fija */
+    object-fit: cover;
+    /* Recorta la imagen manteniendo la proporción */
+    object-position: center;
+    /* Muestra la parte superior de la imagen */
+
+}
+
+/* Empleados */
+.nombre-empleados {
+    color: #b22227;
+    font-family: Lobster;
+    font-size: 2.2em;
+    margin-bottom: .5em;
+}
+
+.descripcion {
+    text-align: justify;
+}
+
+/* Filosofia */
+.filosofia-textos {
+    width: 200px;
+    text-align: center;
+}
+
+.mensajes-filosofias {
+    justify-content: center;
+    gap: 7em;
+}
+
+.texto-centrado {
+    place-self: center;
+    position: relative;
+    max-width: 80%;
+}
+
+.origenes {
+    flex: 1;
+    text-align: center;
+}
+
+.origenes-titulo {
+    text-align: center;
+}
+
+.conocenos {
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.empleado {
+    flex: 1;
+    position: relative;
+
+}
+
+.empleado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.empleado .nombre-rol {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.nombre-empleado {
+    border-bottom: 2px solid white;
+}
+
+.rol {
+    font-style: italic;
+    font-size: .8em;
+    margin-top: .4em;
+}
+
+/* Footer */
+#hidden-footer {
+    position: relative; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #040404;
+    padding: 20px;
+    box-shadow: 0 -5px 10px #ede0dd;
+    z-index: 999;
+}
+
+h3 {
+    font-family: "Lobster";
+    font-size: 1.5rem;
+    color: #b22227;
+}
+
+@media (max-width: 720px) {
+    h3 {
+        font-size: .8rem;
+    }
+    #link {
+        font-size: .7rem;
+    }
+}
+
+#hidden-footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+#hidden-footer .footer-section {
+    margin-bottom: 10px;
+    font-family: 'Noto Sans';
+    color: #ede0dd;
+}
+
+#hidden-footer .footer-section a {
+    display: block;
+    margin-bottom: 5px;
+    color: #ede0dd;
+    text-decoration: none;
+}
+
+/* Estilo base para los enlaces */
+.link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto al pasar el cursor */
+.link:hover {
+    transform: scale(1.2); /* Hace que el texto crezca un 20% */
+    color: #007BFF; /* Cambia el color si lo deseas */
+}
+
+@media (max-width: 720px) {
+    h3 {
+        font-size: 1rem;
+    }
+}
+/* Footer */

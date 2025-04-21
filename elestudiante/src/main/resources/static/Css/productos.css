@@ -1,0 +1,247 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Lobster, Titulos*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); /*Merriweather, Contenido*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand* Ofertas*/
+/*fonts*/
+
+body {
+    background: linear-gradient(to right, #040404, #7c7c84);
+    font-size: 18px;
+}
+
+/* Para tablets y pantallas medianas */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Para celulares y pantallas pequeñas */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+/* Ocultar la barra de scroll pero permitir el desplazamiento */
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
+
+.fixed {
+    background: #ede0dd;
+}
+
+.swiper-slide {
+    background: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Quicksand';
+    font-weight: bold;
+}
+
+#titulo {
+    color: #040404;
+    font-family: 'Lobster';
+    font-size: 3.5rem;
+}
+
+.text-2xl {
+    font-size: 1.7rem;
+    font-family: 'Quicksand';
+    color: #ede0dd
+}
+
+.text-3xl {
+    font-size: 3.5rem;
+    font-family: 'lobster';
+    color: #ede0dd
+}
+
+header {
+    font-size: 1.5rem;
+    font-family: 'Merriweather';
+    color: #040404;
+}
+
+.text-lg {
+    font-size: 1.5rem;
+    color: #ede0dd;
+}
+
+.menu {
+    font-family: 'Quicksand';
+    font-size: 3rem;
+    color: #040404;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 720px) {
+    header {
+        font-size: 1rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    #titulo {
+        font-size: 1.5rem;
+    }
+}
+
+.precio {
+    color: #b22227;
+    font-size: 3rem;
+}
+
+section .flex {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+section .flex-1 {
+    flex: 1;
+    min-width: 200px; /* Asegura que los carruseles sean responsivos */
+}
+
+.swiper-container {
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    align-items: center; /* Centrar elementos horizontalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    text-align: center; /* Centrar texto */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animación suave */
+    font-size: .9rem;
+}
+
+.swiper-slide img {
+    width: 35vw; /* Ajustar tamaño de la imagen */
+    height: 20vw; /* Mantener proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Separación de la imagen con el texto */
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.1; /* Hacer semi-transparente las diapositivas detrás */
+}
+
+.buy-button {
+    background-color: rgba(4, 4, 4, 0.6);
+    color: #ede0dd;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 110px;
+    font-size: 1rem;
+}
+
+@media (max-width: 720px) {
+    .buy-button {
+        font-size: 10px;
+    }
+    .buy-button {
+        width: 80px;
+    }
+}
+
+.buy-button:hover {
+    background-color: #3c3a3c;
+}
+
+/* Botones de navegación */
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #7c7c84, #ede0dd); 
+}
+
+nav a:hover {
+    background: none !important; 
+    box-shadow: none !important; 
+}
+/* Botones de navegación */
+
+/* Footer */
+#hidden-footer {
+    position: relative; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #040404;
+    padding: 20px;
+    box-shadow: 0 -5px 10px #ede0dd;
+    z-index: 999;
+}
+
+h3 {
+    font-family: "Lobster";
+    font-size: 1.5rem;
+    color: #b22227;
+}
+
+#hidden-footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+#hidden-footer .footer-section {
+    margin-bottom: 10px;
+    font-family: 'Noto Sans';
+    color: #ede0dd;
+}
+
+#hidden-footer .footer-section a {
+    display: block;
+    margin-bottom: 5px;
+    color: #ede0dd;
+    text-decoration: none;
+}
+
+/* Estilo base para los enlaces */
+.link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto al pasar el cursor */
+.link:hover {
+    transform: scale(1.2); /* Hace que el texto crezca un 20% */
+    color: #007BFF; /* Cambia el color si lo deseas */
+}
+
+@media (max-width: 720px) {
+    h3 {
+        font-size: 1rem;
+    } 
+}
+/* Footer */
+

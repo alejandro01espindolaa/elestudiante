@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bibliotecas de CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Archivos CSS personalizados -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="chatbot.css">
+
+
+    <link rel="stylesheet" href="rProducto.css" />
+    <link rel="stylesheet" href="responsive.css" />
+
+    <!-- Scripts de bibliotecas -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <title>Registrar Producto</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="fixed-header top-0 left-0 w-full z-50">
+      <nav class="shadow-md p-0.5">
+        <div
+          class="container mx-auto flex justify-between items-center"
+          style="padding: 0"
+        >
+          <div>
+            <img
+              src="/assets/Logo sin Fondo.png"
+              alt="Logo El Estudiante"
+              class="h-20 ml-5"
+            />
+          </div>
+          <div class="space-x-4">
+            <a href="#">Inicio</a>
+            <a href="./productos.html">Menu</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="content">
+      <div
+        class="container mt-5 d-flex align-items-center justify-content-center"
+        style="padding-top: 100px"
+      >
+        <div class="row justify-content-center w-100">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="tituloForm">Registrar Producto</h4>
+              </div>
+              <div class="card-body">
+                <form id="formRegistrarProducto" action="">
+                  <div class="mb-3">
+                    <label for="nombreProducto" class="form-label"
+                      >Producto:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombreProducto"
+                      placeholder="Nombre del Producto"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="descripcion" class="form-label"
+                      >Descripcion:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="descripcion"
+                      placeholder="Descripción del producto"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="precio" class="form-label">Precio:</label>
+                    <input
+                      type="number"
+                      id="precio"
+                      class="form-control"
+                      placeholder="0$"
+                    />
+                  </div>
+                  <div class="text-end">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      style="background-color: #484848"
+                    >
+                      Listo
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Contenedor de alertas de Bootstrap -->
+            <div id="alertContainer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="hidden-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <a class="link" href="https://facebook.com" target="_blank"
+            ><img src="facebook.png" alt="Facebook" style="width: 40px"
+          /></a>
+          <a class="link" href="https://instagram.com" target="_blank"
+            ><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"
+          /></a>
+          <a class="link" href="https://twitter.com" target="_blank"
+            ><img src="./instagram.png" alt="Instagram" style="width: 40px"
+          /></a>
+          <a class="link" href="https://tiktok.com" target="_blank"
+            ><img src="./tiktok.png" alt="Tiktok" style="width: 40px"
+          /></a>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces útiles</h3>
+          <a id="link" class="link" href="#">Términos y Condiciones</a>
+          <a id="link" class="link" href="#">Política de Privacidad</a>
+          <a id="link" class="link" href="#">Soporte</a>
+          <a id="link" class="link" href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+          <h3>Sitios de interes</h3>
+          <a id="link" class="link" href="#">Comida tipica de México</a>
+          <a id="link" class="link" href="#">Gastronomia</a>
+          <a id="link" class="link" href="#">Contactanos</a>
+          <a id="link" class="link" href="#">Vision y Mision</a>
+        </div>
+      </div>
+
+          
+          <!-- Botón flotante del chatbot -->
+  <div id="chat-button" class="chat-button">
+    <i class="fas fa-comments"></i>
+</div>
+
+<!-- Ventana del chatbot -->
+<div id="chat-window" class="chat-window hidden">
+    <div class="chat-header">
+        <div class="chat-title">
+            <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="chat-logo">
+            <span>Asistente El Estudiante</span>
+        </div>
+        <div class="chat-controls">
+          <button id="restart-chat" class="control-button restart-button" title="Reiniciar chat">
+              <i class="fas fa-redo-alt"></i>
+          </button>
+          <button id="minimize-chat" class="control-button minimize-button" title="Minimizar">
+              <i class="fas fa-minus"></i>
+          </button>
+      </div>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="message bot">
+            <div class="message-content">
+                <p>¡Hola! Soy el asistente virtual de El Estudiante. ¿En qué puedo ayudarte hoy?</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+        <button id="send-button" class="send-button">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+
+          
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="rProducto.js"></script>
+    <script src="./chatbot.js"></script>
+
+  </body>
+</html>

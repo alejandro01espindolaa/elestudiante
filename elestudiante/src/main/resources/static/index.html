@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante el Estudiante - Bar - Familiar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="shadow-md p-0.5">
+            <div class="container mx-auto flex justify-between items-center">
+                <div> <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
+                <div class="space-x-4">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./productos.html">Menu</a>
+                    <a href="./about-us.html">Nosotros</a>
+                    <a href="./contacto.html">Contacto</a>
+                    <a href="./vision.html">Reseñas</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="carrito-lateral">
+        <span id="icono-carrito">🛒</span>
+        <div id="carrito-contenido">
+            <h3>Carrito de Compras</h3>
+            <button id="finalizar-compra" class="btn btn-success">Finalizar Compra</button>
+        </div>
+    </div>
+    <main>
+        <!-- Swiper Carousel -->
+        <div class="swiper h-screen">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide relative">
+                    <img src="/1.jpg" alt="Hotel Vista 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 gradient-overlay flex items-center justify-center text-center text-white">
+                        <div>
+                            <h1 class="text-4xl font-bold mb-4">bebidas</h1>
+                            <p class="text-xl mb-6">Bebidas espelizacadas</p>
+                            <a href="#" class="bg font-bold py-3 px-6 rounded-full transition duration-300">
+                                Realiza tu pedido
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <img src="./image.1592429880104.webp" alt="Hotel Vista 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 gradient-overlay flex items-center justify-center text-center text-white">
+                        <div>
+                            <h2 class="text-4xl font-bold mb-4">Comida</h2>
+                            <p class="text-xl mb-6">Los mejores sabores para el cliente.</p>
+                            <a href="productos.html#comida" class="bg font-bold py-3 px-6 rounded-full transition duration-300">
+                                Ver platillos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <img src="/image.1592429880104.webp" alt="Hotel Vista 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 gradient-overlay flex items-center justify-center text-center text-white">
+                        <div>
+                            <h2 class="text-4xl font-bold mb-4">Ubicación</h2>
+                            <p class="text-xl mb-6">Ubicacion unica, Comodidad y Confort</p>
+                            <a href="#" class="bg font-bold py-3 px-6 rounded-full transition duration-300">
+                                Conocenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="ofertas-btn">Ofertas</button>
+            <div id="ofertas-panel" class="ofertas-container">
+                <h2 class="ofertas-titulo">Ofertas Irresistibles</h2>
+                <div class="ofertas-grid">
+                    <div class="oferta-card">
+                        <a href="link_a_oferta_familiar.html">
+                            <img src="/papas fritas.png" alt="Oferta Combo Familiar" class="oferta-imagen">
+                        </a>
+                        <span class="badge-oferta">-30%</span>
+                        <h3 class="oferta-titulo">Combo Familiar</h3>
+                        <p class="oferta-descripcion">4 hamburguesas + 2 bebidas + papas</p>
+                        <span class="oferta-precio">$24.99</span>
+                        <span class="oferta-original">$35.99</span>
+                    </div>
+                    
+                    <div class="oferta-card">
+                        <a href="link_a_oferta_estudiante.html">
+                            <img src="/hamburguesa BBQ.png" alt="Oferta Menú Estudiante" class="oferta-imagen">
+                        </a>
+                        <span class="badge-oferta">-25%</span>
+                        <h3 class="oferta-titulo">Menú Estudiante</h3>
+                        <p class="oferta-descripcion">Hamburguesa + bebida + postre</p>
+                        <span class="oferta-precio">$12.50</span>
+                        <span class="oferta-original">$16.99</span>
+                    </div>
+                    
+                    <div class="oferta-card">
+                        <a href="link_a_oferta_pizza.html">
+                            <img src="/hamburguesa clasica.png" alt="Oferta Noche de Pizza" class="oferta-imagen">
+                        </a>
+                        <span class="badge-oferta">-40%</span>
+                        <h3 class="oferta-titulo">Noche de Pizza</h3>
+                        <p class="oferta-descripcion">Pizza grande + 2 bebidas</p>
+                        <span class="oferta-precio">$18.99</span>
+                        <span class="oferta-original">$31.50</span>
+                    </div>
+                    
+                    <div class="oferta-card">
+                        <a href="link_a_oferta_happyhour.html">
+                            <img src="/papas fritas.png" alt="Oferta Happy Hour" class="oferta-imagen">
+                        </a>
+                        <span class="badge-oferta">-20%</span>
+                        <h3 class="oferta-titulo">Happy Hour</h3>
+                        <p class="oferta-descripcion">2x1 en bebidas + botana</p>
+                        <span class="oferta-precio">$10.00</span>
+                        <span class="oferta-original">$12.50</span>
+                    </div>
+                </div>
+    </main>
+</div>
+
+                <!-- Botón flotante del chatbot -->
+                <div id="chat-button" class="chat-button">
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <!-- Ventana del chatbot -->
+                <div id="chat-window" class="chat-window hidden">
+                    <div class="chat-header">
+                        <div class="chat-title">
+                            <img src="/Logo sin Fondo.png" alt="Logo El Estudiante" class="chat-logo">
+                            <span>Asistente El Estudiante</span>
+                        </div>
+                        <div class="chat-controls">
+                            <button id="restart-chat" class="control-button restart-button" title="Reiniciar chat">
+                                <i class="fas fa-redo-alt"></i>
+                            </button>
+                            <button id="minimize-chat" class="control-button minimize-button" title="Minimizar">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-body" id="chat-body">
+                        <div class="message bot">
+                            <div class="message-content">
+                                <p>¡Hola! Soy el asistente virtual de El Estudiante. ¿En qué puedo ayudarte hoy?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+                        <button id="send-button" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+<footer id="hidden-footer">
+    <div class="footer-content">
+        <div class="footer-section">         
+            <a class="link" href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook" style="width: 40px"></a>                
+            <a class="link" href="https://instagram.com" target="_blank"><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"></a>
+            <a class="link" href="https://twitter.com" target="_blank"><img src="./instagram.png" alt="Instagram" style="width: 40px"></a>
+            <a class="link" href="https://tiktok.com" target="_blank"><img src="./tiktok.png" alt="Tiktok" style="width: 40px"></a>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces útiles</h3>
+            <a id="link" class="link" href="#">Términos y Condiciones</a>
+            <a id="link" class="link" href="#">Política de Privacidad</a>
+            <a id="link" class="link" href="#">Soporte</a>
+            <a id="link" class="link" href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+            <h3>Sitios de interes</h3>
+            <a id="link" class="link" href="#">Comida tipica de México</a>
+            <a id="link" class="link" href="#">Gastronomia</a>
+            <a id="link" class="link" href="#">Contactanos</a>
+            <a id="link" class="link" href="./vision.html">Nuestra Historia</a>
+        </div>
+    </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="./chatbot.js"></script>
+</body>
+</html>

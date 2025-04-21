@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El Estudiante - Nuestro Menú</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="chatbot.css">
+
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="shadow-md p-0.5">
+            <div class="container mx-auto flex justify-between items-center">
+                <div> <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
+                <div class="space-x-4">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./productos.html">Menu</a>
+                    <a href="./about-us.html">Nosotros</a>
+                    <a href="./contacto.html">Contacto</a>
+                    <a href="./vision.html">Reseñas</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="carrito-lateral">
+        <span id="icono-carrito">🛒</span>
+        <div id="carrito-contenido">
+            <h3>Carrito de Compras</h3>
+            <button id="finalizar-compra" class="btn btn-success">Finalizar Compra</button>
+        </div>
+    </div>
+    
+    <!-- Menú -->
+    <main class="container mx-auto pt-24 px-4">
+        <h1 class="text-3xl font-bold text-center mb-8">Menú</h1>
+
+        <!-- Carrusel de Comidas -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-semibold text-center mb-8">Nuestra Selección</h1>
+        
+            <!-- Contenedor principal en formato horizontal -->
+            <div class="flex justify-between gap-4">
+                <!-- Carrusel de lunch -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Lunch</h2>
+                    <div class="swiper-container" id="lunch-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/bagueteMila.jpg" alt="Baguete Milanesa" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Baguete Milanesa</p>
+                                <p style="color: white;" >$105</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/chilaquilesPollo.jpg" alt="Chilaquiles de Pollo" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Chilaquiles de Pollo</p>
+                                <p style="color: white;" >$115</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/huevosDivoriciados.jpg" alt="Huevos Divorciados" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Huevos Divorciados</p>
+                                <p style="color: white;" >$50</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Bebidas -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Cocteles</h2>
+                    <div class="swiper-container" id="bebidas-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/margarita.jpg" alt="Margarita" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Margarita</p>
+                                <p style="color: white;" >$75</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/cuba-libre.webp" alt="Cuba Libre" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Cuba Libre</p>
+                                <p style="color: white;" >$60</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/Mojito.jpg" alt="Mojito" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Mojito</p>
+                                <p style="color: white;" >$85</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/sangria.jpg" alt="Sangria" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Sangria</p>
+                                <p style="color: white;" >$85</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Platos Principales -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Platos Principales</h2>
+                    <div class="swiper-container" id="platos-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/alambre.jpg" alt="Alambre" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Alambre</p>
+                                <p style="color: white;" >$165</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/platoArrachera.jpg" alt="Arrachera" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Arrachera</p>
+                                <p style="color: white;" >$170</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/bistecAsado.jpg" alt="Bistec Asado" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Bistec Asado</p>
+                                <p style="color: white;" >$145</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/ensaladaPollo.jpg" alt="Ensalada de Pollo" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Ensalada de Pollo</p>
+                                <p style="color: white;" >$145</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/ensaladaBistec.jpg" alt="Ensalada de Bistec" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Ensalada de Bistec</p>
+                                <p style="color: white;" >$115</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- Carrusel de Bebidas -->
+        <section class="mb-16">
+            <h1 class="text-3xl font-semibold text-center mb-8">Cafeteria</h1>
+        
+            <!-- Contenedor principal en formato horizontal -->
+            <div class="flex justify-between gap-4">
+                <!-- Carrusel de Lunch  -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Desayunos</h2>
+                    <div class="swiper-container" id="lunch-carousel">
+                        <div class="swiper-wrapper">                            
+                         <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/rebanadas.jpg" alt="Rebanada de Pastel" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Rebanada de Pastel</p>
+                                <p style="color: white;" >$45</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/images (1).jpg" alt="Hot Cakes" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Hot Cakes</p>
+                                <p style="color: white;" >$70</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/panfrances.webp" alt="Pan Frances" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Pan Frances</p>
+                                <p style="color: white;" >$75</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Bebidas -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Bebidas</h2>
+                    <div class="swiper-container" id="bebidas-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/cafeLatte.jpg" alt="Latte" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Latte</p>
+                                <p style="color: white;" >$35</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/cappuccino.jpg" alt="Capuccino Menta" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Capuccino Menta</p>
+                                <p style="color: white;" >$48</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/capuc.jpeg" alt="Capuccino" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Capuccino</p>
+                                <p style="color: white;" >$35</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/te.jpg" alt="Te" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Te</p>
+                                <p style="color: white;" >$28</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/tizana.jpg" alt="Tizana" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Tizana</p>
+                                <p style="color: white;" >$55</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Platos Principales -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Bebidas Frias</h2>
+                    <div class="swiper-container" id="platos-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/frappe.webp" alt="Frappe" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Frappe</p>
+                                <p style="color: white;" >$50</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/frappecajeta.jpg" alt="Frappe de Cajeta" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Frappe de Cajeta</p>
+                                <p style="color: white;" >$60</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/malteadaFresa.jpg" alt="Malteada Fresa" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Maltead Fresa</p>
+                                <p style="color: white;" >$61</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <section class="mb-16">
+            <h1 class="text-3xl font-semibold text-center mb-8">Nuestra Selección</h1>
+        
+            <!-- Contenedor principal en formato horizontal -->
+            <div class="flex justify-between gap-4">
+                <!-- Carrusel de Lunch -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Lunch</h2>
+                    <div class="swiper-container" id="lunch-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/bistecMexa.jpg" alt="Bistec Mexa" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Bistec Mexa</p>
+                                <p style="color: white;" >$145</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/choriqueso.jpg" alt="Choriqueso" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Choriqueso</p>
+                                <p style="color: white;" >$125</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/pechugaAsada.jpg" alt="Grill Chiken Breast" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Grill Chiken Breast</p>
+                                <p style="color: white;" >$145</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/platoMilanesa.jpg" alt="Plato de Milanesa" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Plato de Milanesa</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Bebidas -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Bebidas sin Alcohol</h2>
+                    <div class="swiper-container" id="bebidas-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/conga_bebida.png" alt="Conga" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Conga</p>
+                                <p style="color: white;" >$45</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/aguaJamaica.jpg" alt="Agua de Jamaica" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Agua de Jamaica</p>
+                                <p style="color: white;" >$20</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/limonada.jpg" alt="Limonada" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Limonada</p>
+                                <p style="color: white;" >$35</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carrusel de Platos Principales -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold text-center mb-4">Snacks</h2>
+                    <div class="swiper-container" id="platos-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/alitasb.jpg" alt="Alitas" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Alitas</p>
+                                <p style="color: white;" >$105</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                                <img src="./img/boneles.webp" alt="Boneless" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Boneless</p>
+                                <p style="color: white;" >$105</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                            <div class="swiper-slide flex flex-col items-center bg-white shadow-md p-4 rounded-md">
+                            <img src="./img/dedosQueso.webp" alt="Dedos de Queso" class="rounded-md mb-2" />
+                                <p class="text-lg font-medium">Dedos de Queso</p>
+                                <p style="color: white;" >$75</p>
+                                <button class="buy-button mt-4">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+    </main>
+    
+          <!-- Botón flotante del chatbot -->
+  <div id="chat-button" class="chat-button">
+    <i class="fas fa-comments"></i>
+</div>
+
+<!-- Ventana del chatbot -->
+<div id="chat-window" class="chat-window hidden">
+    <div class="chat-header">
+        <div class="chat-title">
+            <img src="/Logo sin Fondo.png" alt="Logo El Estudiante" class="chat-logo">
+            <span>Asistente El Estudiante</span>
+        </div>
+        <div class="chat-controls">
+            <button id="restart-chat" class="control-button restart-button" title="Reiniciar chat">
+                <i class="fas fa-redo-alt"></i>
+            </button>
+            <button id="minimize-chat" class="control-button minimize-button" title="Minimizar">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="message bot">
+            <div class="message-content">
+                <p>¡Hola! Soy el asistente virtual de El Estudiante. ¿En qué puedo ayudarte hoy?</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+        <button id="send-button" class="send-button">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+
+
+<!-- Footer desplegable -->
+<div id="footer-tab">
+    <span id="footer-hint">Redes Sociales</span>
+</div>
+<footer id="hidden-footer">
+    <div class="footer-content">
+        <div class="footer-section">         
+            <a class="link" href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook" style="width: 40px"></a>                
+            <a class="link" href="https://instagram.com" target="_blank"><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"></a>
+            <a class="link" href="https://twitter.com" target="_blank"><img src="./instagram.png" alt="Instagram" style="width: 40px"></a>
+            <a class="link" href="https://tiktok.com" target="_blank"><img src="./tiktok.png" alt="Tiktok" style="width: 40px"></a>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces útiles</h3>
+            <a id="link" class="link" href="#">Términos y Condiciones</a>
+            <a id="link" class="link" href="#">Política de Privacidad</a>
+            <a id="link" class="link" href="#">Soporte</a>
+            <a id="link" class="link" href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+            <h3>Sitios de interes</h3>
+            <a id="link" class="link" href="#">Comida tipica de México</a>
+            <a id="link" class="link" href="#">Gastronomia</a>
+            <a id="link" class="link" href="#">Contactanos</a>
+            <a id="link" class="link" href="#">Vision y Mision</a>
+        </div>
+    </div>
+
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./productos.js"></script>
+    <script src="./chatbot.js"></script>
+
+</body>
+</html>

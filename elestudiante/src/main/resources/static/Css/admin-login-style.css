@@ -1,0 +1,214 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*Lobster, Titulos*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap'); /*Noto Sans, Contenido*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand, Ofertas*/
+/*fonts*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+header {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans';
+    color: #040404;
+    background: #ede0dd;
+}
+
+@media (max-width: 720px) {
+    header {
+        font-size: 1rem;
+    }
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    .logo-sin-fondo {
+        height: 80px; 
+    }
+}
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff 0%, #fff5f5 35%, #fee2e2 70%, #fecaca 100%);
+    border-radius: 12px; 
+    border: 1px solid rgba(229, 62, 62, 0.4);
+    box-shadow: 0 15px 25px rgba(229, 62, 62, 0.15), 
+                0 5px 10px rgba(0, 0, 0, 0.05),
+                inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    min-height: 340px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 12px 12px 0 0;
+}
+
+.login-container h1 {
+    color: #c53030;
+    border-bottom: 2px solid rgba(229, 62, 62, 0.2);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.btn-primary {
+    background: linear-gradient(to bottom, #e53e3e, #c53030);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(229, 62, 62, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(229, 62, 62, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(229, 62, 62, 0.3);
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    border: 1px solid rgba(76, 78, 80, 0.2);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.text-gray-700 {
+    color: #4a5568;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/*footer*/
+#hidden-footer {
+    position: relative; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #040404;
+    padding: 20px;
+    box-shadow: 0 -5px 10px #ede0dd;
+    z-index: 999;
+}
+
+h3 {
+    font-family: "Lobster";
+    font-size: 1.5rem;
+    color: #b22227;
+}
+
+#hidden-footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+#hidden-footer .footer-section {
+    margin-bottom: 10px;
+    font-family: 'Noto Sans';
+    color: #ede0dd;
+}
+
+#hidden-footer .footer-section a {
+    display: block;
+    margin-bottom: 5px;
+    color: #ede0dd;
+    text-decoration: none;
+}
+
+/* Estilo base para los enlaces */
+.link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #ede0dd; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+/* Efecto al pasar el cursor */
+.link:hover {
+    transform: scale(1.2); 
+    color: #007BFF; 
+}
+
+@media (max-width: 720px) {
+    h3 {
+        font-size: 1rem;
+    } 
+}
+
+#error-message {
+    height: 20px;
+    margin-bottom: 10px;
+    display: block;
+    color: #c53030;
+    font-weight: 500;
+}
+
+#error-message.hidden {
+    visibility: hidden;
+}
+
+/* Estilos para el botón de mostrar/ocultar contraseña */
+#toggle-password {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#toggle-password:hover {
+    color: #e53e3e;
+}
+
+/* Evitar que el icono afecte al input */
+#password {
+    padding-right: 2.5rem;
+}
+
+/* Animación sutil para el cambio de iconos */
+#eye-open, #eye-closed {
+    transition: opacity 0.2s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #background-video {
+        display: none;
+    }
+    .min-h-screen.flex.items-center.justify-center {
+        background-size: cover;
+        background-position: center;
+    }
+}

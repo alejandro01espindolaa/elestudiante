@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  color: white;
+  background-color: black;
+  font-family: "Noto Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  header {
+    font-size: 1rem;
+  }
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  .logo-sin-fondo {
+    height: 80px;
+  }
+}
+
+nav a {
+  transition: transform 0.2s ease-in-out;
+  padding: 2px 12px;
+  display: inline-block;
+  border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+  border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #7c7c84, #ede0dd);
+}
+
+nav a:hover {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Footer */
+#hidden-footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #040404;
+  padding: 20px;
+  box-shadow: 0 -5px 10px #ede0dd;
+  z-index: 999;
+}
+
+h3 {
+  font-family: "Lobster";
+  font-size: 1.5rem;
+  color: #b22227;
+}
+
+@media (max-width: 720px) {
+  h3 {
+    font-size: 0.8rem;
+  }
+  #link {
+    font-size: 0.7rem;
+  }
+}
+
+#hidden-footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+
+#hidden-footer .footer-section {
+  margin-bottom: 10px;
+  font-family: "Noto Sans";
+  color: #ede0dd;
+}
+
+#hidden-footer .footer-section a {
+  display: block;
+  margin-bottom: 5px;
+  color: #ede0dd;
+  text-decoration: none;
+}
+
+/* Estilo base para los enlaces */
+.link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease, color 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto al pasar el cursor */
+.link:hover {
+  transform: scale(1.2); /* Hace que el texto crezca un 20% */
+  color: #007bff;
+}
+
+@media (max-width: 720px) {
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+#alertContainer {
+  margin-top: 20px; /* Espacio entre el formulario y las alertas */
+  width: 100%; /* Asegura que el contenedor de las alertas tenga el mismo ancho que el formulario */
+  max-width: 90%; /* Para evitar que las alertas sean demasiado anchas */
+  margin-left: auto; /* Centra el contenedor de alertas horizontalmente */
+  margin-right: auto; /* Centra el contenedor de alertas horizontalmente */
+  z-index: 1050;
+}
+
+.alert {
+  margin-bottom: 10px; /* Espacio entre las alertas */
+}
+/* Footer */
+
+.tituloForm {
+  text-align: center;
+  color: whitesmoke;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.card-header {
+  height: 50px;
+  background-color: #484848;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  color: whitesmoke;
+  background-color: #484848;
+}
+
+.form-control::placeholder {
+  color: whitesmoke;
+}
+.fixed-header {
+  font-size: 1.5rem;
+  font-family: "Noto Sans";
+  color: #040404;
+  background: #ede0dd;
+}
+
+@media (max-width: 720px) {
+  header {
+    font-size: 1rem;
+  }
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  .logo-sin-fondo {
+    height: 80px;
+  }
+}
+
+.form-control {
+  border: 1px solid #484848; /* Bordes grises */
+  background-color: #484848; /* Fondo gris del campo */
+  color: #fff; /* Texto blanco para contraste */
+}
+
+.card {
+  border: none;
+  margin-bottom: 100px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#hidden-footer {
+  margin-top: auto; /* Esto empuja el footer hacia abajo */
+}
+.col-10,
+.col-sm-8,
+.col-md-6 {
+  max-width: 600px;
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  background-color: #484848;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Añadimos transición suave para el cambio de sombra */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.btn:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra de 4px en el eje X, 8px en el eje Y */
+  background-color: #333333; /* Color más oscuro al hacer hover */
+  transition: all 0.3s;
+  filter: brightness(60%);
+}
