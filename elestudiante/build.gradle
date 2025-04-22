@@ -34,7 +34,7 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	// https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv
-	implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.2'
+	//implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.2'
 }
 
 tasks.named('test') {

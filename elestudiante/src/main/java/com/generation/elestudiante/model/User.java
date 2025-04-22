@@ -3,6 +3,8 @@ package com.generation.elestudiante.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "users")
@@ -27,4 +29,9 @@ public class User {
     public enum UserRole {
         Customer, Administrator
     }
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<Directions> directions;
 }

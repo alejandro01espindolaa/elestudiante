@@ -1,5 +1,6 @@
 package com.generation.elestudiante.controller;
 
+import com.generation.elestudiante.dto.DirectionsRequest;
 import com.generation.elestudiante.model.User;
 import com.generation.elestudiante.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/users/")
 public class UserController {
 
     private final UserService userService;
@@ -32,8 +33,13 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
+    public User addUser(@RequestBody User user){
+        return userService.addUser(user);
+    }
+
+    @PostMapping(path="{userId}/add-direction")//http:/localhost:8080/api/users/2/add-direction  metodo post
+    public User addDirectionUser(@PathVariable("userId") Integer id, @RequestBody DirectionsRequest directionsRequest){
+        return userService.addDirectionUser(id, directionsRequest);
     }
 
     @PutMapping("/{id}")
