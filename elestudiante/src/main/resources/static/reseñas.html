@@ -391,6 +391,44 @@
       </div>
     </main>
 
+
+
+       <!-- Botón flotante del chatbot -->
+       <div id="chat-button" class="chat-button">
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <!-- Ventana del chatbot -->
+    <div id="chat-window" class="chat-window hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <img src="./images/Logo sin Fondo.png" alt="Logo El Estudiante" class="chat-logo">
+                <span>Asistente El Estudiante</span>
+            </div>
+            <div class="chat-controls">
+                <button id="restart-chat" class="control-button restart-button" title="Reiniciar chat">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+                <button id="minimize-chat" class="control-button minimize-button" title="Minimizar">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">
+                <div class="message-content">
+                    <p>¡Hola! Soy el asistente virtual de El Estudiante. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+            <button id="send-button" class="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <footer id="hidden-footer">
       <div class="footer-content">
           <div class="footer-section">         
