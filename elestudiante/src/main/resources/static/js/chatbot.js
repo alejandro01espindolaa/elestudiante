@@ -141,15 +141,15 @@ function loadChatHistory() {
 // Función para mostrar el menú principal
 function showMainMenu() {
     currentMenu = 'main';
-    const menuText = `¿En qué puedo ayudarte? Selecciona una opción:
-a) Información general
-b) Acerca de nosotros
-c) Reservaciones
-d) Lista de productos
-e) Realizar orden
-f) Contactos
-g) Reseñas
-i) Próximos eventos`;
+    const menuText = `¿En qué puedo ayudarte? Selecciona una opción: \n
+a) Información general \n
+b) Acerca de nosotros \n
+c) Reservaciones \n
+d) Lista de productos \n
+e) Realizar orden \n
+f) Contactos \n
+g) Reseñas \n
+i) Próximos eventos \n`;
     
     addMessage(menuText);
 }
@@ -157,11 +157,11 @@ i) Próximos eventos`;
 // Función para mostrar el menú de reservaciones
 function showReservationMenu() {
     currentMenu = 'reservation';
-    const menuText = `Menú de Reservaciones:
-a) Realizar reservación
-b) Mirar próximos eventos
-c) Validar reservación
-d) Volver al menú principal`;
+    const menuText = `Menú de Reservaciones: \n
+a) Realizar reservación \n
+b) Mirar próximos eventos \n
+c) Validar reservación \n
+d) Volver al menú principal \n`;
     
     addMessage(menuText);
 }
@@ -169,13 +169,13 @@ d) Volver al menú principal`;
 // Función para mostrar el menú de productos
 function showProductsMenu() {
     currentMenu = 'products';
-    const menuText = `Lista de Productos:
-a) Visualizar menú alimentos
-b) Visualizar menú bebidas no alcohólicas
-c) Visualizar menú bebidas alcohólicas
-d) Visualizar menú de postres
-e) Miscelánea
-f) Volver al menú principal`;
+    const menuText = `Lista de Productos: \n
+a) Visualizar menú alimentos \n
+b) Visualizar menú bebidas no alcohólicas \n
+c) Visualizar menú bebidas alcohólicas \n
+d) Visualizar menú de postres \n
+e) Miscelánea \n
+f) Volver al menú principal \n`;
     
     addMessage(menuText);
 }
@@ -183,13 +183,13 @@ f) Volver al menú principal`;
 // Función para mostrar el menú de contactos
 function showContactMenu() {
     currentMenu = 'contact';
-    const menuText = `Contactos:
-a) Contacto WhatsApp
-b) Contacto Facebook
-c) Contacto TikTok
-d) Contacto correo electrónico
-e) Contacto Instagram
-f) Volver al menú principal`;
+    const menuText = `Contactos: \n
+a) Contacto WhatsApp \n
+b) Contacto Facebook \n
+c) Contacto TikTok \n
+d) Contacto correo el ectrónico \n
+e) Contacto Instagram \n
+f) Volver al menú principal \n`;
     
     addMessage(menuText);
 }
@@ -197,23 +197,23 @@ f) Volver al menú principal`;
 // Función para mostrar el menú de eventos
 function showEventsMenu() {
     currentMenu = 'events';
-    const menuText = `Próximos Eventos:
-a) Visualizar eventos
-b) Realizar acción de eventos
-c) Volver al menú principal`;
+    const menuText = `Próximos Eventos: \n
+a) Visualizar eventos \n
+b) Realizar acción de eventos \n
+c) Volver al menú principal \n`;
     
     addMessage(menuText);
 }
 
 // Función para manejar la pregunta de agregar al carrito
 function askAddToCart() {
-    addMessage("¿Deseas agregar un producto al carrito? (sí/no)");
+    addMessage("¿Deseas agregar un producto al carrito? \n (sí/no)");
     currentMenu = 'add_to_cart';
 }
 
 // Función para preguntar dónde volver
 function askWhereToReturn() {
-    addMessage("¿Deseas ver el menú anterior o el menú principal? (anterior/principal)");
+    addMessage("¿Deseas ver el menú anterior o el menú principal? \n (anterior/principal)");
     currentMenu = 'return_menu';
 }
 
