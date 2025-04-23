@@ -4,16 +4,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*Quicksand, Ofertas*/
 /*fonts*/
 
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    color: white;
+    background-color: black;
+    font-family: 'Noto Sans', sans-serif;
 }
-header {
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
+
+/*cuerpo*/
+.text-2xl {
+    font-size: 3.5rem;
+    font-family: 'Lobster';
+    color: #040404;
+}
+
+.fixed-header {
     font-size: 1.5rem;
     font-family: 'Noto Sans';
     color: #040404;
     background: #ede0dd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; 
 }
 
 @media (max-width: 720px) {
@@ -27,6 +56,45 @@ header {
         height: 80px; 
     }
 }
+
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+    z-index: 101; 
+    position: relative; 
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+    transform: scale(1.1);    
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header video {
+    width: 100%;
+    object-fit: cover;
+}
+
+.company-name {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
 .login-container {
     max-width: 500px;
     margin: 0 auto;
@@ -42,6 +110,7 @@ header {
     -webkit-backdrop-filter: blur(5px);
     position: relative;
     overflow: hidden;
+    z-index: 10; 
 }
 
 .login-container::before {
@@ -84,14 +153,45 @@ header {
 input[type="email"], input[type="password"], input[type="text"] {
     border: 1px solid rgba(76, 78, 80, 0.2);
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1); /* Cambiado a 1 (opaco) */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    color: #333; /* Color de texto más oscuro para mejor contraste */
+    font-weight: 500; /* Texto ligeramente más grueso */
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+input[type="password"] {
+    -webkit-text-security: disc !important;
 }
 
 input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
     border-color: #e53e3e;
     box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.05);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff; /* Blanco sólido cuando está enfocado */
+    color: #000; /* Negro para máximo contraste cuando se escribe */
+}
+
+/* Agregamos estilos específicos para el placeholder */
+::placeholder {
+    color: #999;
+    opacity: 0.7;
 }
 
 .text-gray-700 {
@@ -110,7 +210,59 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
     object-fit: cover;
 }
 
-/*footer*/
+@media (max-width: 768px) {
+    #background-video {
+    
+        height: 100%;
+        width: auto; 
+        min-height: 100%;
+        min-width: 100%;
+       
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .min-h-screen.flex.items-center.justify-center::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 1;
+    }
+    
+    .login-container {
+        max-width: 90%;
+        margin: 2rem auto;
+    }
+    
+    nav .space-x-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        margin: 5px;
+        padding: 5px 10px;
+    }
+}
+
+
+.shadow-md {
+    position: relative;
+    z-index: 102;
+}
+
+.container.mx-auto.flex.justify-between.items-center {
+    position: relative;
+    z-index: 103;
+}
+
 #hidden-footer {
     position: relative; 
     bottom: 0;
@@ -165,6 +317,9 @@ h3 {
     h3 {
         font-size: 1rem;
     } 
+    #link {
+        font-size: .7rem;
+    }
 }
 
 #error-message {
@@ -201,14 +356,4 @@ h3 {
 
 .hidden {
     display: none;
-}
-
-@media (max-width: 768px) {
-    #background-video {
-        display: none;
-    }
-    .min-h-screen.flex.items-center.justify-center {
-        background-size: cover;
-        background-position: center;
-    }
 }

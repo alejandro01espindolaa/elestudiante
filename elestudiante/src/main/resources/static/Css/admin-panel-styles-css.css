@@ -14,11 +14,66 @@ body {
     flex-direction: column;
 }
 
+.text-2xl {
+    font-size: 3.5rem;
+    font-family: 'Lobster';
+    color: #040404;
+}
+
+.fixed-header {
+    font-size: 1.5rem;
+    font-family: 'Noto Sans';
+    color: #040404;
+    background: #ede0dd;
+}
+
 header {
     font-size: 1.5rem;
     font-family: 'Noto Sans';
     color: #040404;
     background: #ede0dd;
+}
+
+nav a {
+    transition: transform 0.2s ease-in-out; 
+    padding: 2px 12px; 
+    display: inline-block;
+    border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
+}
+
+nav a:last-child {
+    border-right: none; /* Evita la línea en el último enlace */
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #7c7c84, #ede0dd); 
+}
+
+nav a:hover {
+    background: none !important; 
+    box-shadow: none !important; 
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header video {
+    width: 100%;
+    object-fit: cover;
+}
+
+.company-name {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
 }
 
 main {
@@ -82,6 +137,27 @@ main {
 
 .btn-secondary:hover {
     background-color: #2d3748;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+input[type="password"] {
+    -webkit-text-security: disc !important;
 }
 
 .file-input-container {
@@ -169,7 +245,6 @@ h3 {
     text-decoration: none;
 }
 
-/* Media queries combinados */
 @media (max-width: 768px) {
     #sidebar {
         transform: translateX(-100%);
@@ -204,5 +279,9 @@ h3 {
     
     h3 {
         font-size: 1rem;
+    }
+    
+    #link {
+        font-size: .7rem;
     }
 }
