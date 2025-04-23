@@ -7,6 +7,9 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 const chatBody = document.getElementById('chat-body');
 
+// Variable para seguir el estado actual del menú
+let currentMenu = 'main';
+let cartItems = [];
 
 // Función para reiniciar el chat
 function restartChat() {
@@ -24,11 +27,11 @@ function restartChat() {
         restartButton.classList.remove('spinning');
     }, 600);
     
-    // Añadir mensaje de reinicio
+    // Añadir mensaje de reinicio y mostrar el menú principal
     addMessage('Chat reiniciado. ¿En qué puedo ayudarte hoy?');
+    currentMenu = 'main';
+    showMainMenu();
 }
-
-// Event listener para el botón de reinicio
 
 // Función para mostrar el chatbot
 function showChatWindow() {
@@ -41,6 +44,11 @@ function showChatWindow() {
     
     // Cargar el historial cuando se abre el chat
     loadChatHistory();
+    
+    // Si no hay historial, mostrar el menú principal
+    if (chatBody.children.length <= 1) {
+        showMainMenu();
+    }
 }
 
 // Función para ocultar el chatbot
@@ -130,39 +138,325 @@ function loadChatHistory() {
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
+// Función para mostrar el menú principal
+function showMainMenu() {
+    currentMenu = 'main';
+    const menuText = `¿En qué puedo ayudarte? Selecciona una opción:
+a) Información general
+b) Acerca de nosotros
+c) Reservaciones
+d) Lista de productos
+e) Realizar orden
+f) Contactos
+g) Reseñas
+i) Próximos eventos`;
+    
+    addMessage(menuText);
+}
 
+// Función para mostrar el menú de reservaciones
+function showReservationMenu() {
+    currentMenu = 'reservation';
+    const menuText = `Menú de Reservaciones:
+a) Realizar reservación
+b) Mirar próximos eventos
+c) Validar reservación
+d) Volver al menú principal`;
+    
+    addMessage(menuText);
+}
 
+// Función para mostrar el menú de productos
+function showProductsMenu() {
+    currentMenu = 'products';
+    const menuText = `Lista de Productos:
+a) Visualizar menú alimentos
+b) Visualizar menú bebidas no alcohólicas
+c) Visualizar menú bebidas alcohólicas
+d) Visualizar menú de postres
+e) Miscelánea
+f) Volver al menú principal`;
+    
+    addMessage(menuText);
+}
 
-// Función para procesar la respuesta del bot (simulada)
+// Función para mostrar el menú de contactos
+function showContactMenu() {
+    currentMenu = 'contact';
+    const menuText = `Contactos:
+a) Contacto WhatsApp
+b) Contacto Facebook
+c) Contacto TikTok
+d) Contacto correo electrónico
+e) Contacto Instagram
+f) Volver al menú principal`;
+    
+    addMessage(menuText);
+}
+
+// Función para mostrar el menú de eventos
+function showEventsMenu() {
+    currentMenu = 'events';
+    const menuText = `Próximos Eventos:
+a) Visualizar eventos
+b) Realizar acción de eventos
+c) Volver al menú principal`;
+    
+    addMessage(menuText);
+}
+
+// Función para manejar la pregunta de agregar al carrito
+function askAddToCart() {
+    addMessage("¿Deseas agregar un producto al carrito? (sí/no)");
+    currentMenu = 'add_to_cart';
+}
+
+// Función para preguntar dónde volver
+function askWhereToReturn() {
+    addMessage("¿Deseas ver el menú anterior o el menú principal? (anterior/principal)");
+    currentMenu = 'return_menu';
+}
+
+// Función para procesar la respuesta del bot
 function processBotResponse(userMessage) {
-    // Respuestas predefinidas basadas en palabras clave
-    const keywords = {
-        'hola': '¡Hola! ¿En qué puedo ayudarte hoy?',
-        'ayuda': 'Puedo ayudarte con información sobre cursos, materiales de estudio y más. ¿Qué necesitas?',
-        'curso': 'Tenemos una amplia variedad de cursos. ¿Sobre qué tema te gustaría saber más?',
-        'material': 'Contamos con materiales de estudio en formato PDF, videos y prácticas. ¿Qué tipo de material estás buscando?',
-        'profesor': 'Nuestros profesores son expertos en sus áreas. ¿Necesitas información sobre algún profesor en particular?',
-        'precio': 'Los precios varían según el curso o material. ¿Te interesa alguno en específico?',
-        'gracias': '¡De nada! Estoy aquí para ayudarte cuando lo necesites.'
-    };
+    const lowercaseMessage = userMessage.toLowerCase().trim();
     
-    // Respuesta por defecto
-    let response = 'Gracias por tu mensaje. ¿Puedes ser más específico sobre lo que necesitas?';
-    
-    // Buscar palabras clave en el mensaje del usuario
-    const lowercaseMessage = userMessage.toLowerCase();
-    
-    for (const [keyword, reply] of Object.entries(keywords)) {
-        if (lowercaseMessage.includes(keyword)) {
-            response = reply;
-            break;
-        }
+    // Si el usuario escribe "menu" en cualquier momento, mostrar el menú principal
+    if (lowercaseMessage === 'menu' || lowercaseMessage === 'menú') {
+        showMainMenu();
+        return;
     }
     
-    // Simular tiempo de respuesta
-    setTimeout(() => {
-        addMessage(response);
-    }, 800);
+    // Procesar respuesta según el menú actual
+    switch (currentMenu) {
+        case 'main':
+            processMainMenu(lowercaseMessage);
+            break;
+        case 'reservation':
+            processReservationMenu(lowercaseMessage);
+            break;
+        case 'products':
+            processProductsMenu(lowercaseMessage);
+            break;
+        case 'contact':
+            processContactMenu(lowercaseMessage);
+            break;
+        case 'events':
+            processEventsMenu(lowercaseMessage);
+            break;
+        case 'add_to_cart':
+            processAddToCart(lowercaseMessage);
+            break;
+        case 'return_menu':
+            processReturnMenu(lowercaseMessage);
+            break;
+        case 'product_detail':
+            processProductDetail(lowercaseMessage);
+            break;
+        default:
+            // Si no estamos en un menú reconocido, volver al menú principal
+            addMessage("No entendí tu solicitud. Te muestro el menú principal.");
+            showMainMenu();
+            break;
+    }
+}
+
+// Procesar selección del menú principal
+function processMainMenu(message) {
+    switch (message) {
+        case 'a':
+            addMessage("Aquí tienes información general sobre nuestro restaurante. Somos un lugar especializado en comida tradicional, con un ambiente acogedor y excelente servicio.");
+            setTimeout(showMainMenu, 1500);
+            break;
+        case 'b':
+            addMessage("Acerca de nosotros: Somos un restaurante con más de 10 años de experiencia, dedicados a ofrecer la mejor experiencia gastronómica con ingredientes frescos y de calidad.");
+            setTimeout(showMainMenu, 1500);
+            break;
+        case 'c':
+            showReservationMenu();
+            break;
+        case 'd':
+            showProductsMenu();
+            break;
+        case 'e':
+            if (cartItems.length > 0) {
+                addMessage(`Tu orden actual contiene ${cartItems.length} productos. ¿Deseas finalizar tu pedido? (sí/no)`);
+                currentMenu = 'finish_order';
+            } else {
+                addMessage("Tu carrito está vacío. Primero debes agregar productos desde el menú de productos.");
+                setTimeout(showMainMenu, 1500);
+            }
+            break;
+        case 'f':
+            showContactMenu();
+            break;
+        case 'g':
+            addMessage("¡Nos encantaría conocer tu opinión! Por favor, comparte tu experiencia con nosotros (calificación de 1-5 estrellas y comentario).");
+            currentMenu = 'review';
+            break;
+        case 'i':
+            showEventsMenu();
+            break;
+        default:
+            addMessage("No entendí tu selección. Por favor, elige una opción del menú (a-i).");
+            showMainMenu();
+            break;
+    }
+}
+
+// Procesar selección del menú de reservaciones
+function processReservationMenu(message) {
+    switch (message) {
+        case 'a':
+            addMessage("Para realizar una reservación, necesitamos los siguientes datos: nombre, fecha, hora y número de personas. ¿Podrías proporcionarnos esta información?");
+            currentMenu = 'make_reservation';
+            break;
+        case 'b':
+            addMessage("Próximamente tendremos: Noche de música en vivo (viernes), Degustación de vinos (sábado), Buffet dominical (domingo). ¿Te gustaría hacer una reservación para alguno de estos eventos?");
+            currentMenu = 'reserve_event';
+            break;
+        case 'c':
+            addMessage("Para validar tu reservación, por favor proporciónanos el código de confirmación que recibiste.");
+            currentMenu = 'validate_reservation';
+            break;
+        case 'd':
+            showMainMenu();
+            break;
+        default:
+            addMessage("No entendí tu selección. Por favor, elige una opción del menú de reservaciones (a-d).");
+            showReservationMenu();
+            break;
+    }
+}
+
+// Procesar selección del menú de productos
+function processProductsMenu(message) {
+    let menuType = "";
+    
+    switch (message) {
+        case 'a':
+            menuType = "alimentos";
+            addMessage("Nuestro menú de alimentos incluye: Entradas, Platos fuertes, Ensaladas y Especialidades del chef.");
+            break;
+        case 'b':
+            menuType = "bebidas no alcohólicas";
+            addMessage("Nuestras bebidas no alcohólicas incluyen: Aguas frescas, Refrescos, Café, Té y Jugos naturales.");
+            break;
+        case 'c':
+            menuType = "bebidas alcohólicas";
+            addMessage("Nuestras bebidas alcohólicas incluyen: Vinos, Cervezas artesanales, Cócteles clásicos y Especialidades de la casa.");
+            break;
+        case 'd':
+            menuType = "postres";
+            addMessage("Nuestros postres incluyen: Pasteles, Helados artesanales, Frutas de temporada y Especialidades tradicionales.");
+            break;
+        case 'e':
+            menuType = "miscelánea";
+            addMessage("En nuestra sección de miscelánea encontrarás: Souvenirs, Productos para llevar, Salsas caseras y Artículos promocionales.");
+            break;
+        case 'f':
+            showMainMenu();
+            return;
+        default:
+            addMessage("No entendí tu selección. Por favor, elige una opción del menú de productos (a-f).");
+            showProductsMenu();
+            return;
+    }
+    
+    if (menuType) {
+        currentMenu = 'product_detail';
+        setTimeout(() => {
+            askAddToCart();
+        }, 1000);
+    }
+}
+
+// Procesar selección del menú de contactos
+function processContactMenu(message) {
+    switch (message) {
+        case 'a':
+            addMessage("Nuestro WhatsApp: +52 123 456 7890. Horario de atención: Lunes a Domingo de 9:00 a 22:00 hrs.");
+            setTimeout(showContactMenu, 1500);
+            break;
+        case 'b':
+            addMessage("Encuéntranos en Facebook como: @ElRestaurante. No olvides seguirnos para ver nuestras promociones.");
+            setTimeout(showContactMenu, 1500);
+            break;
+        case 'c':
+            addMessage("Síguenos en TikTok: @ElRestauranteTikTok. Compartimos videos de nuestros platillos y eventos.");
+            setTimeout(showContactMenu, 1500);
+            break;
+        case 'd':
+            addMessage("Nuestro correo electrónico: contacto@elrestaurante.com. Te responderemos a la brevedad.");
+            setTimeout(showContactMenu, 1500);
+            break;
+        case 'e':
+            addMessage("Encuéntranos en Instagram como: @ElRestauranteIG. Comparte tus fotos y etiquétanos.");
+            setTimeout(showContactMenu, 1500);
+            break;
+        case 'f':
+            showMainMenu();
+            break;
+        default:
+            addMessage("No entendí tu selección. Por favor, elige una opción del menú de contactos (a-f).");
+            showContactMenu();
+            break;
+    }
+}
+
+// Procesar selección del menú de eventos
+function processEventsMenu(message) {
+    switch (message) {
+        case 'a':
+            addMessage("Próximos eventos: \n- Viernes: Noche de música en vivo (19:00 hrs) \n- Sábado: Degustación de vinos (18:00 hrs) \n- Domingo: Buffet dominical (13:00 hrs)");
+            setTimeout(showEventsMenu, 2000);
+            break;
+        case 'b':
+            addMessage("¿Qué acción te gustaría realizar con nuestros eventos? \n1) Reservar un lugar \n2) Solicitar más información");
+            currentMenu = 'event_action';
+            break;
+        case 'c':
+            showMainMenu();
+            break;
+        default:
+            addMessage("No entendí tu selección. Por favor, elige una opción del menú de eventos (a-c).");
+            showEventsMenu();
+            break;
+    }
+}
+
+// Procesar respuesta a la pregunta de agregar al carrito
+function processAddToCart(message) {
+    if (message === 'si' || message === 'sí' || message === 's') {
+        addMessage("Producto agregado al carrito exitosamente.");
+        cartItems.push({
+            id: cartItems.length + 1,
+            name: "Producto " + (cartItems.length + 1),
+            price: Math.floor(Math.random() * 200) + 50
+        });
+        askWhereToReturn();
+    } else if (message === 'no' || message === 'n') {
+        askWhereToReturn();
+    } else {
+        addMessage("Por favor responde 'sí' o 'no'.");
+    }
+}
+
+// Procesar respuesta a la pregunta de dónde volver
+function processReturnMenu(message) {
+    if (message === 'anterior' || message === 'a') {
+        showProductsMenu();
+    } else if (message === 'principal' || message === 'p') {
+        showMainMenu();
+    } else {
+        addMessage("No entendí tu respuesta. Por favor, indica si deseas volver al menú 'anterior' o al 'principal'.");
+    }
+}
+
+// Procesar detalle de producto
+function processProductDetail(message) {
+    // Esta función podría ampliarse para mostrar productos específicos
+    askAddToCart();
 }
 
 // Función para enviar mensaje
@@ -177,7 +471,9 @@ function sendMessage() {
         userInput.value = '';
         
         // Procesar respuesta
-        processBotResponse(message);
+        setTimeout(() => {
+            processBotResponse(message);
+        }, 500);
     }
 }
 
