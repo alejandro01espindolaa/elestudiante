@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administrador - Restaurante el Estudiante</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="admin-panel-styles-css.css">
+    <link rel="stylesheet" href="Css/admin-panel-styles-css.css">
 </head>
 <body class="bg-gray-100">
-    <header class="fixed top-0 left-0 w-full z-50">
+    <header class="fixed-header top-0 left-0 w-full z-50">
         <nav class="shadow-md p-0.5">
             <div class="container mx-auto flex justify-between items-center">
-                <div> <img src="Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
+                <div> <img src="./images/Logo sin Fondo.png" alt="Logo El Estudiante" class="h-20 ml-5"> </div>
                 <div class="space-x-4">
                     <a href="./index.html">Inicio</a>
                     <a href="./productos.html">Menu</a>
                     <a href="./about-us.html">Nosotros</a>
                     <a href="./contacto.html">Contacto</a>
                     <a href="./vision.html">Reseñas</a>
-                    <a href="./admin-login-html.html">Administrador</a>
+                    <a href="./admin-login-html.html"><img src="./images/user.png" alt="Usuario" class="h-6 inline-block"></a>
                 </div>
             </div>
-        </nav>
+        </nav>  
+
     </header>
+
     <div class="h-20"></div>
     
     <main class="container mx-auto p-6 pt-6 pb-footer">
@@ -377,37 +379,29 @@
 
     <footer id="hidden-footer">
         <div class="footer-content">
-          <div class="footer-section">
-            <a class="link" href="https://facebook.com" target="_blank"
-              ><img src="facebook.png" alt="Facebook" style="width: 40px"
-            /></a>
-            <a class="link" href="https://instagram.com" target="_blank"
-              ><img src="./whatsapp.png" alt="Whatsapp" style="width: 40px"
-            /></a>
-            <a class="link" href="https://twitter.com" target="_blank"
-              ><img src="./instagram.png" alt="Instagram" style="width: 40px"
-            /></a>
-            <a class="link" href="https://tiktok.com" target="_blank"
-              ><img src="./tiktok.png" alt="Tiktok" style="width: 40px"
-            /></a>
-          </div>
-          <div class="footer-section">
-            <h3>Enlaces útiles</h3>
-            <a id="link" class="link" href="#">Términos y Condiciones</a>
-            <a id="link" class="link" href="#">Política de Privacidad</a>
-            <a id="link" class="link" href="#">Soporte</a>
-            <a id="link" class="link" href="#">Blog</a>
-          </div>
-          <div class="footer-section">
-            <h3>Sitios de interes</h3>
-            <a id="link" class="link" href="#">Comida tipica de México</a>
-            <a id="link" class="link" href="#">Gastronomia</a>
-            <a id="link" class="link" href="#">Contactanos</a>
-            <a id="link" class="link" href="#">Vision y Mision</a>
-          </div>
+            <div class="footer-section">         
+                <a class="link" href="https://facebook.com" target="_blank"><img src="./images/facebook.png" alt="Facebook" style="width: 40px"></a>
+                <a class="link" href="https://instagram.com" target="_blank"><img src="./images/whatsapp.png" alt="Whatsapp" style="width: 40px"></a>
+                <a class="link" href="https://twitter.com" target="_blank"><img src="./images/instagram.png" alt="Instagram" style="width: 40px"></a>
+                <a class="link" href="https://tiktok.com" target="_blank"><img src="./images/tiktok.png" alt="Tiktok" style="width: 40px"></a>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces útiles</h3>
+                <a id="link" class="link" href="#">Términos y Condiciones</a>
+                <a id="link" class="link" href="#">Política de Privacidad</a>
+                <a id="link" class="link" href="#">Soporte</a>
+                <a id="link" class="link" href="#">Blog</a>
+            </div>
+            <div class="footer-section">
+                <h3>Sitios de interes</h3>
+                <a id="link" class="link" href="#">Comida tipica de México</a>
+                <a id="link" class="link" href="#">Gastronomia</a>
+                <a id="link" class="link" href="#">Contactanos</a>
+                <a id="link" class="link" href="./vision.html">Nuestra Historia</a>
+            </div>
         </div>
-      </footer>
+    </footer>
 
-    <script src="admin-panel-js.js"></script>
+    <script src="js/admin-panel-js.js"></script>
 </body>
 </html>
