@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./Css/about-us.css" />
+    <link rel="stylesheet" href="./Css/responsive.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <title>Reseñas - El Estudiante</title>
+    <style>
+      .h2titulo {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .centrarp {
+        text-align: justify;
+      }
+
+      .estrella {
+        color: gold;
+        font-size: 1.5em;
+        margin-right: 3px;
+      }
+
+      .resena-card {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 8px rgba(237, 224, 221, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .resena-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .cliente-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .cliente-imagen {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        border: 2px solid #b22227;
+      }
+
+      .cliente-nombre {
+        font-family: "Lobster", cursive;
+        font-size: 1.5em;
+        color: #b22227;
+      }
+
+      .fecha-resena {
+        font-size: 0.8em;
+        color: #7c7c84;
+        margin-top: 5px;
+      }
+
+      .resena-texto {
+        margin-top: 10px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .formulario-resena {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 8px rgba(237, 224, 221, 0.1);
+      }
+
+      .input-field,
+      .textarea-field {
+        width: 100%;
+        background-color: #2a2a2a;
+        border: 1px solid #3a3a3a;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+        color: #ede0dd;
+        font-family: "Noto Sans", sans-serif;
+      }
+
+      .textarea-field {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .rating-select {
+        display: flex;
+        margin-bottom: 15px;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .rating-select label {
+        margin-right: 15px;
+        color: #ede0dd;
+      }
+
+      .star-rating {
+        display: flex;
+      }
+
+      .submit-btn {
+        background-color: #b22227;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #8e1c20;
+      }
+
+      .destacado {
+        border-left: 4px solid #b22227;
+        padding-left: 20px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="fixed-header top-0 left-0 w-full z-50">
+      <nav class="shadow-md p-0.5">
+        <div class="container mx-auto flex justify-between items-center">
+          <div>
+            <img
+              src="./images/Logo sin Fondo.png"
+              alt="Logo El Estudiante"
+              class="h-20 ml-5"
+            />
+          </div>
+          <div class="space-x-4">
+            <a href="./index.html">Inicio</a>
+            <a href="./productos.html">Menu</a>
+            <a href="./about-us.html">Nosotros</a>
+            <a href="./contacto.html">Contacto</a>
+            <a href="./vision.html">Reseñas</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="origenes">
+          <div class="origenes-subtitulo subtitulos">
+            <h2 class="h2titulo">OPINIONES DE NUESTROS CLIENTES</h2>
+          </div>
+          <div class="origenes-titulo titulos">RESEÑAS</div>
+          <div class="texto-centrado contenido">
+            <p class="centrarp">
+              En El Estudiante valoramos la opinión de cada uno de nuestros
+              comensales. Aquí compartimos algunas de las experiencias que
+              nuestros clientes han tenido en nuestro restaurante. Tu
+              satisfacción es nuestra mayor recompensa y nos motiva a seguir
+              mejorando día a día.
+            </p>
+          </div>
+        </div>
+
+        <div class="columnas">
+          <img class="imagen-mesas" src="images/about-image-drinks.jpg" />
+        </div>
+
+        <!-- Sección de Reseñas -->
+        <div class="resenas-container">
+          <!-- Reseña 1 -->
+          <div class="resena-card">
+            <div class="cliente-info">
+              <img
+                src="images/customer-6.jpg"
+                alt="Cliente"
+                class="cliente-imagen"
+              />
+              <div>
+                <div class="cliente-nombre">María González</div>
+                <div class="fecha-resena">15 de Marzo, 2025</div>
+                <div>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="resena-texto">
+              <p>
+                ¡Una experiencia gastronómica excepcional! Me encantó la
+                autenticidad de los platillos, especialmente las enchiladas que
+                me recordaron a las que preparaba mi abuela. El ambiente
+                familiar y acogedor hace que te sientas como en casa. El
+                servicio fue impecable, todo el personal fue muy atento y
+                amable. Definitivamente regresaré con mi familia.
+              </p>
+              <p class="destacado mt-3">
+                Lo que más me encantó fue el sabor casero de cada plato,
+                realmente se nota el amor y la dedicación que ponen en su
+                cocina.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reseña 2 -->
+          <div class="resena-card">
+            <div class="cliente-info">
+              <img
+                src="images/customer-5.jpg"
+                alt="Cliente"
+                class="cliente-imagen"
+              />
+              <div>
+                <div class="cliente-nombre">Carlos Rodríguez</div>
+                <div class="fecha-resena">2 de Abril, 2025</div>
+                <div>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella" style="color: #7c7c84">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="resena-texto">
+              <p>
+                El Estudiante se ha convertido en mi restaurante favorito para
+                almorzar durante la semana. Los platos del día están siempre
+                frescos y deliciosos. El personal es amable y el servicio
+                rápido, lo cual es perfecto cuando tienes poco tiempo para
+                comer. La relación calidad-precio es excelente, considerando el
+                tamaño de las porciones y la calidad de los ingredientes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reseña 3 -->
+          <div class="resena-card">
+            <div class="cliente-info">
+              <img
+                src="images/customer-1.jpg"
+                alt="Cliente"
+                class="cliente-imagen"
+              />
+              <div>
+                <div class="cliente-nombre">Laura Martínez</div>
+                <div class="fecha-resena">28 de Marzo, 2025</div>
+                <div>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="resena-texto">
+              <p>
+                Celebré mi cumpleaños en El Estudiante y fue una experiencia
+                inolvidable. El equipo se encargó de cada detalle para hacer la
+                noche especial. La comida estaba deliciosa, especialmente el
+                mole que pedí como plato principal. Las bebidas también merecen
+                una mención especial, los cócteles son originales y muy bien
+                preparados.
+              </p>
+              <p class="destacado mt-3">
+                El servicio personalizado y la atención a los detalles marcan la
+                diferencia en este restaurante.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reseña 4 -->
+          <div class="resena-card">
+            <div class="cliente-info">
+              <img
+                src="images/steve.jpg"
+                alt="Cliente"
+                class="cliente-imagen"
+              />
+              <div>
+                <div class="cliente-nombre">Javier López</div>
+                <div class="fecha-resena">10 de Abril, 2025</div>
+                <div>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella">★</span>
+                  <span class="estrella" style="color: #7c7c84">★</span>
+                </div>
+              </div>
+            </div>
+            <div class="resena-texto">
+              <p>
+                Visité El Estudiante por primera vez este fin de semana y quedé
+                gratamente sorprendido. La selección de platos tradicionales es
+                impresionante y todo lo que probé estaba delicioso. El ambiente
+                es acogedor y el personal conoce muy bien el menú, ofreciendo
+                excelentes recomendaciones. El único detalle a mejorar sería el
+                tiempo de espera, ya que estaba bastante lleno, pero
+                definitivamente vale la pena.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario para dejar reseña -->
+        <div class="formulario-resena">
+          <div class="titulos" style="font-size: 2em">
+            COMPARTE TU EXPERIENCIA
+          </div>
+          <div class="subtitulos mb-6">
+            Nos encantaría conocer tu opinión sobre tu visita a El Estudiante
+          </div>
+
+          <form>
+            <div class="columnas" style="gap: 20px">
+              <div style="flex: 1">
+                <input type="text" placeholder="Nombre" class="input-field" />
+              </div>
+              <div style="flex: 1">
+                <input
+                  type="email"
+                  placeholder="Correo electrónico"
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <div class="rating-select">
+              <label>Tu calificación:</label>
+              <div class="star-rating">
+                <span class="estrella">★</span>
+                <span class="estrella">★</span>
+                <span class="estrella">★</span>
+                <span class="estrella">★</span>
+                <span class="estrella">★</span>
+              </div>
+            </div>
+
+            <textarea
+              placeholder="Comparte los detalles de tu experiencia en El Estudiante..."
+              class="textarea-field"
+            ></textarea>
+
+            <button type="submit" class="submit-btn">Enviar Reseña</button>
+          </form>
+        </div>
+
+        <div class="origenes">
+          <div class="subtitulos">
+            <h2 class="h2titulo">TU OPINIÓN ES IMPORTANTE</h2>
+          </div>
+          <div class="titulos">GRACIAS POR COMPARTIR TU EXPERIENCIA</div>
+          <div class="texto-centrado contenido">
+            <p class="centrarp">
+              En El Estudiante valoramos cada opinión y sugerencia que nos ayude
+              a mejorar. Nos esforzamos día a día por ofrecer la mejor
+              experiencia gastronómica y tu retroalimentación es fundamental
+              para seguir creciendo. ¡Esperamos verte pronto nuevamente!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="hidden-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <a class="link" href="https://facebook.com" target="_blank"
+            ><img
+              src="./images/facebook.png"
+              alt="Facebook"
+              style="width: 40px"
+          /></a>
+          <a class="link" href="https://instagram.com" target="_blank"
+            ><img
+              src="./images/whatsapp.png"
+              alt="Whatsapp"
+              style="width: 40px"
+          /></a>
+          <a class="link" href="https://twitter.com" target="_blank"
+            ><img
+              src="./images/instagram.png"
+              alt="Instagram"
+              style="width: 40px"
+          /></a>
+          <a class="link" href="https://tiktok.com" target="_blank"
+            ><img src="./images/tiktok.png" alt="Tiktok" style="width: 40px"
+          /></a>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces útiles</h3>
+          <a id="link" class="link" href="#">Términos y Condiciones</a>
+          <a id="link" class="link" href="#">Política de Privacidad</a>
+          <a id="link" class="link" href="#">Soporte</a>
+          <a id="link" class="link" href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+          <h3>Sitios de interes</h3>
+          <a id="link" class="link" href="#">Comida tipica de México</a>
+          <a id="link" class="link" href="#">Gastronomia</a>
+          <a id="link" class="link" href="#">Contactanos</a>
+          <a id="link" class="link" href="./vision.html">Nuestra Historia</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
